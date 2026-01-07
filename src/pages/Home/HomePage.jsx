@@ -1,14 +1,25 @@
-import React from "react";
-import ProductCard from "../../features/product/ProductCard";
+import React, { useState } from "react";
 import products from "../../data/products";
-
-import Button from "../../ui/Button/Button";
+import CategoryButtons from "../../features/catalog/CategoryButtons";
+import ProductFilters from "../../features/catalog/ProductFilters";
+import ProductGrid from "../../features/catalog/ProductGrid";
 import styles from "./HomePage.module.css";
 
 function HomePage() {
+    const [categoryFilter, setCategoryFilter] = useState("all");
+    const [tagsFilter, setTagsFilter] = useState("all");
+
+    const filteredProducts = products.filter(p => {
+        const categoryMatch = categoryFilter === "all" || p.categories.includes(categoryFilter);
+        const tagMatch = tagsFilter === "all" || p.tags.includes(tagsFilter);
+        return categoryMatch && tagMatch;
+    });
+
+    const categories = [...new Set(products.flatMap(p => p.categories))];
+    const tags = [...new Set(products.flatMap(p => p.tags))];
+
     return (
         <main className={styles.home}>
-
             <section className={styles.hero}>
                 <h1>Современная мебель для дома и офиса</h1>
                 <p>Комфорт, стиль и качество — в одном месте</p>
@@ -16,44 +27,35 @@ function HomePage() {
 
             <section className={styles.categories}>
                 <h2>Категории</h2>
-
-                <div className={styles.categoryGrid}>
-                    <Button to="/catalog/sofas" className={styles.categoryCard}>
-                        Диваны
-                    </Button>
-
-                    <Button to="/catalog/chairs" className={styles.categoryCard}>
-                        Кресла
-                    </Button>
-
-                    <Button to="/catalog/tables" className={styles.categoryCard}>
-                        Столы
-                    </Button>
-
-                    <Button to="/catalog/beds" className={styles.categoryCard}>
-                        Кровати
-                    </Button>
-
-                    <Button to="/catalog/cabinets" className={styles.categoryCard}>
-                        Комоды
-                    </Button>
-                </div>
+                <CategoryButtons />
             </section>
 
             <section className={styles.products}>
                 <h2>Популярные товары</h2>
+                <ProductGrid 
+                    products={products} 
+                    itemsPerPage={8}
+                />
+            </section>
 
-                <div className={styles.productsGrid}>
-                    {products.slice(0, 8).map((product) => (
-                        <ProductCard
-                            key={product.id}
-                            id={product.id}
-                            image={product.image}
-                            name={product.name}
-                            price={product.price}
-                        />
-                    ))}
-                </div>
+            <section className={styles.products}>
+                <h2>Поиск по категориям</h2>
+                <ProductFilters
+                    categories={categories}
+                    tags={tags}
+                    categoryFilter={categoryFilter}
+                    setCategoryFilter={setCategoryFilter}
+                    tagsFilter={tagsFilter}
+                    setTagsFilter={setTagsFilter}
+                />
+                {filteredProducts.length === 0 ? (
+                    <div>Ничего не найдено!</div>
+                ) : (
+                    <ProductGrid 
+                        products={filteredProducts} 
+                        mode="loadMore"
+                    />
+                )}
             </section>
 
             <section className={styles.advantages}>
@@ -61,7 +63,6 @@ function HomePage() {
                 <div className={styles.advantage}>🛠 Гарантия качества</div>
                 <div className={styles.advantage}>💳 Удобная оплата</div>
             </section>
-
         </main>
     );
 }

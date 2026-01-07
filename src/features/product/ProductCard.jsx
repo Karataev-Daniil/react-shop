@@ -23,7 +23,7 @@ function ProductCard({ id, name, price, image }) {
                 <h3 className={styles.name}>{name}</h3>
             </Button>
 
-            <p className={styles.price}>{price}</p>
+            <p className={styles.price}>{price} $</p>
 
             <Button
                 onClick={() => addToCart(id)}

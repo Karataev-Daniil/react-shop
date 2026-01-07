@@ -1,0 +1,15 @@
+.categoryGrid {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    gap: 20px;
+}
+.categoryCard {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 12px;
+}
