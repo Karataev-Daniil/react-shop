@@ -1,0 +1,56 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 400;
+    transition: background 0.2s ease, color 0.2s ease;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.minimal {
+    background: #f3f4f6;
+    color: #111827;
+    padding: 6px 12px;
+}
+.minimal:hover {
+    background: #e5e7eb;
+}
+
+.secondary {
+    background: #e5e7eb;
+    color: #111827;
+    padding: 8px 14px;
+}
+.secondary:hover {
+    background: #d1d5db;
+}
+
+.link {
+    background: transparent;
+    padding: 0;
+    color: #4f46e5;
+}
+.link:hover {
+    text-decoration: underline;
+}
+
+.linkGray {
+    background: transparent;
+    padding: 0;
+    color: #6b7280;
+}
+.linkGray:hover {
+    text-decoration: underline;
+    color: #4b5563;
+}
+
+.unstyled {
+    all: unset;
+    display: inline;
+    cursor: pointer;
+}

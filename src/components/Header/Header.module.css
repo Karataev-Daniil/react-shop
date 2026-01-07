@@ -1,0 +1,39 @@
+/* Header.module.css */
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.hours {
+  font-size: 14px;
+  color: #555;
+}
+.navList {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.navItem {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.navItem:hover {
+  color: #0077ff;
+}
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}

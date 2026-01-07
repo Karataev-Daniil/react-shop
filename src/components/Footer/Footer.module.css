@@ -1,0 +1,34 @@
+/* Footer.module.css */
+.footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+.topSection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.navList {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.navItem {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.navItem:hover {
+  color: #0077ff;
+}
+.bottomSection {
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+}
