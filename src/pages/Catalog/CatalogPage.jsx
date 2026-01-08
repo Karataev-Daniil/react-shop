@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import products from "../../data/products";
 
 import ProductGrid from "../../features/catalog/ProductGrid";
@@ -27,6 +28,36 @@ function CatalogPage() {
 
     return (
         <main className={styles.catalog}>
+            <Helmet>
+                {category ? (
+                    <>
+                        <title>Каталог: {category} | Furniture Store</title>
+                        <meta 
+                            name="description" 
+                            content={`Все товары категории ${category} на Furniture Store — современные, качественные и удобные.`} 
+                        />
+                        {productsByCategory[0]?.image && (
+                            <meta property="og:image" content={productsByCategory[0].image} />
+                        )}
+                        <meta property="og:title" content={`Каталог: ${category} | Furniture Store`} />
+                        <meta property="og:description" content={`Все товары категории ${category} на Furniture Store — современные, качественные и удобные.`} />
+                    </>
+                ) : (
+                    <>
+                        <title>Каталог мебели | Furniture Store</title>
+                        <meta 
+                            name="description" 
+                            content="Каталог мебели Furniture Store — широкий выбор стульев, столов, диванов и шкафов для дома и офиса." 
+                        />
+                        {productsByCategory[0]?.image && (
+                            <meta property="og:image" content={productsByCategory[0].image} />
+                        )}
+                        <meta property="og:title" content="Каталог мебели | Furniture Store" />
+                        <meta property="og:description" content="Каталог мебели Furniture Store — широкий выбор стульев, столов, диванов и шкафов для дома и офиса." />
+                    </>
+                )}
+            </Helmet>
+
             <section className={styles.categoryHeader}>
                 <h1 className={styles.title}>
                     {category ? `Категория: ${category}` : "Каталог мебели"}

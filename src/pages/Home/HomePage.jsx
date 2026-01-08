@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import products from "../../data/products";
 import CategoryButtons from "../../features/catalog/CategoryButtons";
 import ProductFilters from "../../features/catalog/ProductFilters";
@@ -20,6 +21,19 @@ function HomePage() {
 
     return (
         <main className={styles.home}>
+            <Helmet>
+                <title>Современная мебель для дома и офиса | Furniture Store</title>
+                <meta
+                    name="description"
+                    content="Furniture Store — современная мебель для дома и офиса. Стулья, диваны, столы и шкафы высокого качества."
+                />
+                {products[0]?.image && (
+                    <meta property="og:image" content={products[0].image} />
+                )}
+                <meta property="og:title" content="Современная мебель для дома и офиса | Furniture Store" />
+                <meta property="og:description" content="Furniture Store — современная мебель для дома и офиса. Стулья, диваны, столы и шкафы высокого качества." />
+            </Helmet>
+
             <section className={styles.hero}>
                 <h1>Современная мебель для дома и офиса</h1>
                 <p>Комфорт, стиль и качество — в одном месте</p>
