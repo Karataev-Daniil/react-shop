@@ -1,0 +1,72 @@
+.page {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.backButton {
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+.reviewFormSection {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+.reviewTitle {
+    margin-bottom: 1rem;
+}
+.inputs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.textInput, .numberInput {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+.submitButton {
+    padding: 0.5rem 1rem;
+}
+.reviewsListSection {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+.reviewsListTitle {
+    margin-bottom: 1rem;
+}
+.reviewsList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.reviewItem {
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+.reviewText {
+    font-weight: 500;
+}
+.reviewGrade {
+    font-weight: bold;
+    color: #007bff;
+}
+.reviewStars {
+    display: flex;
+    gap: 2px;
+}
+
+.filledStar {
+    color: gold;
+    font-size: 1.2rem;
+}
+
+.emptyStar {
+    color: #ccc;
+    font-size: 1.2rem;
+}
