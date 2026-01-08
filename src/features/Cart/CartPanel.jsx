@@ -21,26 +21,24 @@ function CartPanel({ cart, removeInCart }) {
                     ×
                 </Button>
             )}
-            <Cart
-                cart={cart}
-                removeInCart={removeInCart}
-            />
 
-            {stateCart === 'closed' ? (
+            <Cart cart={cart} removeInCart={removeInCart} />
+
+            {stateCart === "closed" ? (
                 <Button
-                    onClick={() => setStateCart('open')}
+                    onClick={() => setStateCart("open")}
                     variant="secondary"
-                    className={styles.cartLink}
+                    className={styles.cartToggle}
                 >
-                    Открыть корзину ( {cart.length === 0 ? 'пуста' : cart.length} )
+                    Открыть корзину ({cart.length === 0 ? "пуста" : cart.length})
                 </Button>
             ) : (
                 <Button
                     to="/cart"
                     variant="secondary"
-                    className={styles.cartLink}
+                    className={styles.cartToggle}
                 >
-                    Корзина ( {cart.length === 0 ? 'пуста' : cart.length} )
+                    Корзина ({cart.length === 0 ? "пуста" : cart.length})
                 </Button>
             )}
         </div>

@@ -16,11 +16,18 @@
 .card {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    gap: 12px 32px;
     background: #ffffff;
-    border-radius: 16px;
-    padding: 24px;
-    border: 1px solid #e5e7eb;
+}
+.cardHeader {
+    grid-column: 1 / -1;
+    text-align: left;
+}
+.purchase {
+    background-color: #f3f4f6;
+    border-radius: 36px;
+    padding: 36px;
+    margin: 0 0 20px;
 }
 .image {
     width: 100%;
@@ -45,14 +52,24 @@
 }
 .meta {
     display: flex;
-    gap: 12px;
+    align-items: center;
+    gap: 4px;
     font-size: 14px;
     color: #6b7280;
+    margin: 0 0 20px;
 }
 .meta span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #f3f4f6;
     padding: 6px 10px;
     border-radius: 8px;
+    line-height: 100%;
+}
+.meta h2 {
+    color: #111827;
+    margin: 0;
 }
 .notFound {
     padding: 40px;

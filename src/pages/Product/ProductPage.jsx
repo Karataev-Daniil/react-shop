@@ -1,21 +1,36 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useOutletContext } from "react-router-dom";
 import products from "../../data/products";
 
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import Button from "../../ui/Button/Button";
 import styles from "./ProductPage.module.css";
 
 export async function loader({ params }) {
-    const product = products.find(p => p.id === Number(params.id));
+    const { id, category } = params;
+
+    const product = products.find(
+        (p) =>
+            p.id === Number(id) &&
+            p.categories.includes(category)
+    );
+
     return { product };
 }
 
 function ProductPage() {
+    const { addToCart } = useOutletContext();
     const { product } = useLoaderData();
 
     if (!product) {
         return <p className={styles.notFound}>Product not found</p>;
     }
+
+    const breadcrumbs = [
+        { label: "Главная", to: "/" },
+        { label: product.categories[0], to: `/catalog/${product.categories[0]}` },
+        { label: product.name },
+    ];
 
     return (
         <div className={styles.page}>
@@ -28,19 +43,38 @@ function ProductPage() {
             </Button>
 
             <div className={styles.card}>
-                <img
-                    src={product.image}
-                    alt={product.name}
-                    className={styles.image}
-                />
+                <div className={styles.cardHeader}>
+                    <h1 className={styles.name}>{product.name}</h1>
+                    <Breadcrumbs items={breadcrumbs} />
+                </div>
+                
+                <div className={styles.cardImage}>
+                    <img
+                        src={product.image}
+                        alt={product.name}
+                        className={styles.image}
+                    />
+                </div>
 
                 <div className={styles.info}>
-                    <h1 className={styles.name}>{product.name}</h1>
-                    <p className={styles.price}>{product.price} ₽</p>
+                    <div className={styles.purchase}>
+                        <p className={styles.price}>{product.price} $</p>
+
+                        <Button
+                            variant="secondary"
+                            onClick={() => addToCart(product.id)}
+                        >
+                            Добавить в корзину
+                        </Button>
+                    </div>
 
                     <div className={styles.meta}>
-                        <span>{product.categories.join(", ")}</span>
-                        <span>{product.tags.join(", ")}</span>
+                        <h2>Категория:</h2>
+                        {product.categories.map((c) => <span key={c}>{c}</span>)}
+                    </div>
+                    <div className={styles.meta}>
+                        <h2>Теги:</h2>
+                        {product.tags.map((t) => <span key={t}>{t}</span>)}
                     </div>
                 </div>
             </div>

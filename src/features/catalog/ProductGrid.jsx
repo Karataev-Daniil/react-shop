@@ -46,6 +46,7 @@ function ProductGrid({ products, mode, itemsPerPage = 8 }) {
                     image={product.image}
                     name={product.name}
                     price={product.price}
+                    categories={product.categories}
                 />
             ))}
 

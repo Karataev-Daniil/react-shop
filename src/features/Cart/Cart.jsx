@@ -1,23 +1,23 @@
 import React from "react";
-import styles from "./Cart.module.css";
 import CartProduct from "./CartProduct";
+import styles from "./Cart.module.css";
 
 function Cart({ cart, removeInCart }) {
     if (cart.length === 0) {
         return <p className={styles.empty}>Корзина пуста</p>;
     }
-    
+
     return (
-        <div 
-            className={styles.cartList}
-        >
-            {cart.map(p => (
-                <CartProduct
-                    key={p.cartItemId}
-                    product={p}
-                    removeInCart={removeInCart}
-                />
-            ))}
+        <div className={styles.cartListWrapper}>
+            <div className={styles.cartList}>
+                {cart.map((product) => (
+                    <CartProduct
+                        key={product.cartItemId}
+                        product={product}
+                        removeInCart={removeInCart}
+                    />
+                ))}
+            </div>
         </div>
     );
 }

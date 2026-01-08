@@ -1,24 +1,47 @@
-main {
-    padding: 20px;
-}
-section {
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 0 20px;
     margin: 60px 0;
 }
-h1 {
+
+.hero {
     text-align: center;
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #333;
+    padding: 60px 0;
+    background: #f5f5f5;
+    border-radius: 16px;
 }
-p {
-    text-align: center;
-    font-size: 16px;
-    margin-bottom: 20px;
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 1.2rem;
     color: #555;
 }
-h2 {
+
+
+.categories h2, .products h2 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+}
+
+.advantages {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.advantage {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
     text-align: center;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 12px;
+    flex: 1 1 30%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    font-weight: 500;
 }
