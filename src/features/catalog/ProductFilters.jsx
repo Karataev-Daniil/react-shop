@@ -6,7 +6,7 @@ function ProductFilters({ categories, tags, categoryFilter, setCategoryFilter, t
         <div className={styles.filtersWrapper}>
             <div className={styles.filters}>
                 <select value={categoryFilter} onChange={(e) => setCategoryFilter(e.target.value)}>
-                    <option value="all">Все категории</option>
+                    <option value="all">All Categories</option>
                     {categories.map((c) => (
                         <option key={c} value={c}>{c}</option>
                     ))}
@@ -14,7 +14,7 @@ function ProductFilters({ categories, tags, categoryFilter, setCategoryFilter, t
             </div>
             <div className={styles.filters}>
                 <select value={tagsFilter} onChange={(e) => setTagsFilter(e.target.value)}>
-                    <option value="all">Все теги</option>
+                    <option value="all">All Tags</option>
                     {tags.map((c) => (
                         <option key={c} value={c}>{c}</option>
                     ))}

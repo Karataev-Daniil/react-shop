@@ -8,25 +8,27 @@ import styles from "./CartPage.module.css";
 function CartPage() {
     const { cart, removeInCart, createOrder } = useOutletContext();
 
+    const totalPrice = cart.reduce((sum, p) => sum + Number(p.price), 0);
+
     return (
         <>
             <Helmet>
-                <title>Корзина — Furniture Store</title>
+                <title>Cart — Furniture Store</title>
                 <meta
                     name="description"
                     content={
                         cart.length > 0
-                            ? `В вашей корзине ${cart.length} товаров на сумму ${cart.reduce((sum, p) => sum + Number(p.price), 0)} $`
-                            : "Ваша корзина пуста — добавьте товары для покупки."
+                            ? `You have ${cart.length} items in your cart totaling ${totalPrice} $`
+                            : "Your cart is empty — add items to purchase."
                     }
                 />
-                <meta property="og:title" content="Корзина — Furniture Store" />
+                <meta property="og:title" content="Cart — Furniture Store" />
                 <meta
                     property="og:description"
                     content={
                         cart.length > 0
-                            ? `В вашей корзине ${cart.length} товаров на сумму ${cart.reduce((sum, p) => sum + Number(p.price), 0)} $`
-                            : "Ваша корзина пуста — добавьте товары для покупки."
+                            ? `You have ${cart.length} items in your cart totaling ${totalPrice} $`
+                            : "Your cart is empty — add items to purchase."
                     }
                 />
                 <meta property="og:image" content="/images/cart-og.png" />
@@ -34,17 +36,17 @@ function CartPage() {
 
             <div className={styles.page}>
                 <Button to="/" variant="link" className={styles.back}>
-                    ← Назад
+                    ← Back
                 </Button>
 
                 {cart.length === 0 ? (
-                    <p>Корзина пуста</p>
+                    <p>Your cart is empty</p>
                 ) : (
                     <>
-                        <h1>Корзина</h1>
+                        <h1>Cart</h1>
 
                         <p className={styles.count}>
-                            Товаров в корзине: {cart.length}
+                            Items in cart: {cart.length}
                         </p>
 
                         <div className={styles.cartList}>
@@ -60,9 +62,9 @@ function CartPage() {
                         <div className={styles.summary}>
                             <div className={styles.summaryInfo}>
                                 <span className={styles.totalLabel}>---------------------</span>
-                                <span className={styles.totalLabel}>Итого</span>
+                                <span className={styles.totalLabel}>Total</span>
                                 <span className={styles.totalPrice}>
-                                    {cart.reduce((sum, p) => sum + Number(p.price), 0)} $
+                                    {totalPrice} $
                                 </span>
                             </div>
                             
@@ -70,7 +72,7 @@ function CartPage() {
                                 className={styles.checkout}
                                 onClick={() => createOrder(cart)}
                             >
-                                Оформить заказ
+                                Place Order
                             </Button>
                         </div>
                     </>

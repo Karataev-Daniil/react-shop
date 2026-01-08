@@ -4,11 +4,11 @@ import styles from "./CategoryButtons.module.css";
 
 function CategoryButtons() {
     const categories = [
-        { name: "Диваны", path: "sofas" },
-        { name: "Кресла", path: "chairs" },
-        { name: "Столы", path: "tables" },
-        { name: "Кровати", path: "beds" },
-        { name: "Комоды", path: "cabinets" },
+        { name: "Sofas", path: "sofas" },
+        { name: "Armchairs", path: "chairs" },
+        { name: "Tables", path: "tables" },
+        { name: "Beds", path: "beds" },
+        { name: "Chests of Drawers", path: "cabinets" },
     ];
 
     return (

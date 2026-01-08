@@ -53,11 +53,11 @@ function ProductGrid({ products, mode, itemsPerPage = 8 }) {
             {mode === "pagination" && products.length > itemsPerPage && (
                 <div className={styles.paginationWrapper}>
                     <Button onClick={handlePrevPage} disabled={currentPage === 1}>
-                        Назад
+                        Previous
                     </Button>
                     <span>{currentPage} / {totalPages}</span>
                     <Button onClick={handleNextPage} disabled={currentPage === totalPages}>
-                        Вперед
+                        Next
                     </Button>
                 </div>
             )}
@@ -65,7 +65,7 @@ function ProductGrid({ products, mode, itemsPerPage = 8 }) {
             {mode === "loadMore" && visibleCount < products.length && (
                 <div className={styles.loadMoreWrapper}>
                     <Button onClick={handleLoadMore}>
-                        Загрузить ещё
+                        Load More
                     </Button>
                 </div>
             )}

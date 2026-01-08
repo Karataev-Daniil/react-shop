@@ -4,7 +4,7 @@ import styles from "./Cart.module.css";
 
 function Cart({ cart, removeInCart }) {
     if (cart.length === 0) {
-        return <p className={styles.empty}>Корзина пуста</p>;
+        return <p className={styles.empty}>Your cart is empty</p>;
     }
 
     return (

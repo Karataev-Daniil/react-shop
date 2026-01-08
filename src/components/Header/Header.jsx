@@ -8,43 +8,43 @@ function Header() {
         <header className={styles.header}>
             <div className={styles.topBar}>
                 <div className={styles.hours}>
-                    Ежедневно с 10:00 до 21:00
+                    Daily from 10:00 AM to 9:00 PM
                 </div>
 
                 <ul className={styles.navList}>
                     <li className={styles.navItem}>
                         <Button to="/orders" variant="link">
-                            Заказы
+                            Orders
                         </Button>
                     </li>
 
                     <li className={styles.navItem}>
                         <Button to="/about" variant="link">
-                            О компании
+                            About Us
                         </Button>
                     </li>
 
                     <li className={styles.navItem}>
                         <Button to="/catalog" variant="link">
-                            Каталог
+                            Catalog
                         </Button>
                     </li>
 
                     <li className={styles.navItem}>
                         <Button to="/buyers" variant="link">
-                            Покупателям
+                            For Buyers
                         </Button>
                     </li>
 
                     <li className={styles.navItem}>
                         <Button to="/reviews" variant="link">
-                            Отзывы
+                            Reviews
                         </Button>
                     </li>
 
                     <li className={styles.navItem}>
                         <Button to="/contacts" variant="link">
-                            Контакты
+                            Contacts
                         </Button>
                     </li>
                 </ul>

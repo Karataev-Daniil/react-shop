@@ -22,30 +22,30 @@ function HomePage() {
     return (
         <main className={styles.home}>
             <Helmet>
-                <title>Современная мебель для дома и офиса | Furniture Store</title>
+                <title>Modern Furniture for Home and Office | Furniture Store</title>
                 <meta
                     name="description"
-                    content="Furniture Store — современная мебель для дома и офиса. Стулья, диваны, столы и шкафы высокого качества."
+                    content="Furniture Store — modern furniture for home and office. High-quality chairs, sofas, tables, and wardrobes."
                 />
                 {products[0]?.image && (
                     <meta property="og:image" content={products[0].image} />
                 )}
-                <meta property="og:title" content="Современная мебель для дома и офиса | Furniture Store" />
-                <meta property="og:description" content="Furniture Store — современная мебель для дома и офиса. Стулья, диваны, столы и шкафы высокого качества." />
+                <meta property="og:title" content="Modern Furniture for Home and Office | Furniture Store" />
+                <meta property="og:description" content="Furniture Store — modern furniture for home and office. High-quality chairs, sofas, tables, and wardrobes." />
             </Helmet>
 
             <section className={styles.hero}>
-                <h1>Современная мебель для дома и офиса</h1>
-                <p>Комфорт, стиль и качество — в одном месте</p>
+                <h1>Modern Furniture for Home and Office</h1>
+                <p>Comfort, style, and quality — all in one place</p>
             </section>
 
             <section className={styles.categories}>
-                <h2>Категории</h2>
+                <h2>Categories</h2>
                 <CategoryButtons />
             </section>
 
             <section className={styles.products}>
-                <h2>Популярные товары</h2>
+                <h2>Popular Products</h2>
                 <ProductGrid 
                     products={products} 
                     itemsPerPage={8}
@@ -53,7 +53,7 @@ function HomePage() {
             </section>
 
             <section className={styles.products}>
-                <h2>Поиск по категориям</h2>
+                <h2>Browse by Categories</h2>
                 <ProductFilters
                     categories={categories}
                     tags={tags}
@@ -63,7 +63,7 @@ function HomePage() {
                     setTagsFilter={setTagsFilter}
                 />
                 {filteredProducts.length === 0 ? (
-                    <div>Ничего не найдено!</div>
+                    <div>No results found!</div>
                 ) : (
                     <ProductGrid 
                         products={filteredProducts} 
@@ -73,9 +73,9 @@ function HomePage() {
             </section>
 
             <section className={styles.advantages}>
-                <div className={styles.advantage}>🚚 Быстрая доставка</div>
-                <div className={styles.advantage}>🛠 Гарантия качества</div>
-                <div className={styles.advantage}>💳 Удобная оплата</div>
+                <div className={styles.advantage}>🚚 Fast Delivery</div>
+                <div className={styles.advantage}>🛠 Quality Guarantee</div>
+                <div className={styles.advantage}>💳 Convenient Payment</div>
             </section>
         </main>
     );

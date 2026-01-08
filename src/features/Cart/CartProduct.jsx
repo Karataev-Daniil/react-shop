@@ -12,7 +12,7 @@ function CartProduct({ product, removeInCart }) {
                 variant="secondary"
                 className={styles.removeBtn}
             >
-                Удалить
+                Remove
             </Button>
         </div>
     );

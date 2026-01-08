@@ -81,9 +81,9 @@ function MainLayout() {
             {showPopup && lastOrder && (
                 <div className="popup">
                     <div className="popupContent">
-                        <h3>Заказ оформлен!</h3>
-                        <p>Спасибо за покупку. Ваш заказ № {lastOrder.orderNumber}</p>
-                        <button onClick={() => setShowPopup(false)}>Закрыть</button>
+                        <h3>Order Placed!</h3>
+                        <p>Thank you for your purchase. Your order № {lastOrder.orderNumber}</p>
+                        <button onClick={() => setShowPopup(false)}>Close</button>
                     </div>
                 </div>
             )}

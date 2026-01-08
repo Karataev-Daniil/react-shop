@@ -31,41 +31,41 @@ function CatalogPage() {
             <Helmet>
                 {category ? (
                     <>
-                        <title>Каталог: {category} | Furniture Store</title>
+                        <title>Catalog: {category} | Furniture Store</title>
                         <meta 
                             name="description" 
-                            content={`Все товары категории ${category} на Furniture Store — современные, качественные и удобные.`} 
+                            content={`All products in the ${category} category at Furniture Store — modern, high-quality, and comfortable.`} 
                         />
                         {productsByCategory[0]?.image && (
                             <meta property="og:image" content={productsByCategory[0].image} />
                         )}
-                        <meta property="og:title" content={`Каталог: ${category} | Furniture Store`} />
-                        <meta property="og:description" content={`Все товары категории ${category} на Furniture Store — современные, качественные и удобные.`} />
+                        <meta property="og:title" content={`Catalog: ${category} | Furniture Store`} />
+                        <meta property="og:description" content={`All products in the ${category} category at Furniture Store — modern, high-quality, and comfortable.`} />
                     </>
                 ) : (
                     <>
-                        <title>Каталог мебели | Furniture Store</title>
+                        <title>Furniture Catalog | Furniture Store</title>
                         <meta 
                             name="description" 
-                            content="Каталог мебели Furniture Store — широкий выбор стульев, столов, диванов и шкафов для дома и офиса." 
+                            content="Furniture Store catalog — a wide selection of chairs, tables, sofas, and wardrobes for home and office." 
                         />
                         {productsByCategory[0]?.image && (
                             <meta property="og:image" content={productsByCategory[0].image} />
                         )}
-                        <meta property="og:title" content="Каталог мебели | Furniture Store" />
-                        <meta property="og:description" content="Каталог мебели Furniture Store — широкий выбор стульев, столов, диванов и шкафов для дома и офиса." />
+                        <meta property="og:title" content="Furniture Catalog | Furniture Store" />
+                        <meta property="og:description" content="Furniture Store catalog — a wide selection of chairs, tables, sofas, and wardrobes for home and office." />
                     </>
                 )}
             </Helmet>
 
             <section className={styles.categoryHeader}>
                 <h1 className={styles.title}>
-                    {category ? `Категория: ${category}` : "Каталог мебели"}
+                    {category ? `Category: ${category}` : "Furniture Catalog"}
                 </h1>
             </section>
 
             <section className={styles.productsSection}>
-                <h2 className={styles.sectionTitle}>Товары категории</h2>
+                <h2 className={styles.sectionTitle}>Products in Category</h2>
                 <ProductGrid 
                     products={productsByCategory} 
                     itemsPerPage={36}
@@ -73,7 +73,7 @@ function CatalogPage() {
             </section>
 
             <section className={styles.filtersSection}>
-                <h2 className={styles.sectionTitle}>Поиск по другим категориям</h2>
+                <h2 className={styles.sectionTitle}>Browse Other Categories</h2>
 
                 <div className={styles.filtersWrapper}>
                     <ProductFilters
@@ -87,7 +87,7 @@ function CatalogPage() {
                 </div>
 
                 {filteredProducts.length === 0 ? (
-                    <div className={styles.noResults}>Ничего не найдено!</div>
+                    <div className={styles.noResults}>No results found!</div>
                 ) : (
                     <ProductGrid 
                         products={filteredProducts} 

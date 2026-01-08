@@ -28,7 +28,7 @@ function ProductPage() {
     }
 
     const breadcrumbs = [
-        { label: "Главная", to: "/" },
+        { label: "Home", to: "/" },
         { label: product.categories[0], to: `/catalog/${product.categories[0]}` },
         { label: product.name },
     ];
@@ -40,7 +40,7 @@ function ProductPage() {
                 <span>{key}</span>
                 <span>{product.specs[key]}</span>
             </div>
-        )
+        );
     }
 
     return (
@@ -49,10 +49,10 @@ function ProductPage() {
                 <title>{product.name} | Furniture Store</title>
                 <meta
                     name="description"
-                    content={`Купить ${product.name} из категории ${product.categories[0]} по цене ${product.price} ₽. Качественная мебель для дома и офиса.`}
+                    content={`Buy ${product.name} from category ${product.categories[0]} for ${product.price} $. High-quality furniture for home and office.`}
                 />
                 <meta property="og:title" content={product.name} />
-                <meta property="og:description" content={`Купить ${product.name} из категории ${product.categories[0]}`} />
+                <meta property="og:description" content={`Buy ${product.name} from category ${product.categories[0]}`} />
                 <meta property="og:type" content="product" />
                 <meta property="og:image" content={product.image} />
             </Helmet>
@@ -63,7 +63,7 @@ function ProductPage() {
                     variant="link"
                     className={styles.back}
                 >
-                    ← Назад
+                    ← Back
                 </Button>
 
                 <div className={styles.card}>
@@ -82,28 +82,28 @@ function ProductPage() {
 
                     <div className={styles.info}>
                         <div className={styles.purchase}>
-                            <p className={styles.price}>{product.price} ₽</p>
+                            <p className={styles.price}>{product.price} $</p>
 
                             <Button
                                 variant="secondary"
                                 onClick={() => addToCart(product.id)}
                             >
-                                Добавить в корзину
+                                Add to Cart
                             </Button>
                         </div>
 
                         <div className={styles.meta}>
-                            <h2>Категория:</h2>
+                            <h2>Category:</h2>
                             {product.categories.map((c) => <span key={c}>{c}</span>)}
                         </div>
                         <div className={styles.meta}>
-                            <h2>Теги:</h2>
+                            <h2>Tags:</h2>
                             {product.tags.map((t) => <span key={t}>{t}</span>)}
                         </div>
                     </div>
                 </div>
                 <div className={styles.specs}>
-                    <h2>Характеристики:</h2>
+                    <h2>Specifications:</h2>
                     {specsElements}
                 </div>
             </div>
@@ -112,4 +112,3 @@ function ProductPage() {
 }
 
 export default ProductPage;
-

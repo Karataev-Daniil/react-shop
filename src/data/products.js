@@ -1,8 +1,7 @@
 const products = [
-    // Chairs
     {
         id: 1,
-        name: "Стул классический",
+        name: "Classic Chair",
         price: 1200,
         image: "/images/table1.jpg",
         categories: ["chairs"],
@@ -16,13 +15,13 @@ const products = [
             weight: 6,
         },
         availability: [
-            { storeId: "center", storeName: "Центральный магазин", city: "Chisinau", quantity: 8 },
-            { storeId: "north", storeName: "Северный склад", city: "Balti", quantity: 3 },
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 8 },
+            { storeId: "north", storeName: "North Warehouse", city: "Balti", quantity: 3 },
         ],
     },
     {
         id: 2,
-        name: "Стул современный",
+        name: "Modern Chair",
         price: 1500,
         image: "/images/table2.jpg",
         categories: ["chairs"],
@@ -36,12 +35,12 @@ const products = [
             weight: 7,
         },
         availability: [
-            { storeId: "center", storeName: "Центральный магазин", city: "Chisinau", quantity: 5 },
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 5 },
         ],
     },
     {
         id: 3,
-        name: "Барный стул",
+        name: "Bar Stool",
         price: 1800,
         image: "/images/table1.jpg",
         categories: ["chairs"],
@@ -54,14 +53,12 @@ const products = [
             weight: 8,
         },
         availability: [
-            { storeId: "center", storeName: "Центральный магазин", city: "Chisinau", quantity: 2 },
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 2 },
         ],
     },
-
-    // Tables
     {
         id: 4,
-        name: "Стол обеденный",
+        name: "Dining Table",
         price: 4500,
         image: "/images/table1.jpg",
         categories: ["tables"],
@@ -75,13 +72,13 @@ const products = [
             depth: 90,
         },
         availability: [
-            { storeId: "center", storeName: "Центральный магазин", city: "Chisinau", quantity: 1 },
-            { storeId: "south", storeName: "Южный салон", city: "Cahul", quantity: 1 },
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 1 },
+            { storeId: "south", storeName: "South Showroom", city: "Cahul", quantity: 1 },
         ],
     },
     {
         id: 5,
-        name: "Стол журнальный",
+        name: "Coffee Table",
         price: 2500,
         image: "/images/table2.jpg",
         categories: ["tables"],
@@ -93,12 +90,12 @@ const products = [
             height: 45,
         },
         availability: [
-            { storeId: "center", storeName: "Центральный магазин", city: "Chisinau", quantity: 4 },
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 4 },
         ],
     },
     {
         id: 6,
-        name: "Консольный стол",
+        name: "Console Table",
         price: 3200,
         image: "/images/table1.jpg",
         categories: ["tables"],
@@ -110,14 +107,12 @@ const products = [
             depth: 35,
         },
         availability: [
-            { storeId: "north", storeName: "Северный склад", city: "Balti", quantity: 2 },
+            { storeId: "north", storeName: "North Warehouse", city: "Balti", quantity: 2 },
         ],
     },
-
-    // Wardrobes
     {
         id: 7,
-        name: "Шкаф для одежды",
+        name: "Wardrobe",
         price: 7800,
         image: "/images/table2.jpg",
         categories: ["wardrobes"],
@@ -130,12 +125,12 @@ const products = [
             width: 150,
         },
         availability: [
-            { storeId: "center", storeName: "Центральный магазин", city: "Chisinau", quantity: 1 },
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 1 },
         ],
     },
     {
         id: 8,
-        name: "Комод",
+        name: "Chest of Drawers",
         price: 5500,
         image: "/images/table1.jpg",
         categories: ["wardrobes"],
@@ -147,12 +142,12 @@ const products = [
             height: 90,
         },
         availability: [
-            { storeId: "south", storeName: "Южный салон", city: "Cahul", quantity: 2 },
+            { storeId: "south", storeName: "South Showroom", city: "Cahul", quantity: 2 },
         ],
     },
     {
         id: 9,
-        name: "Шкаф купе",
+        name: "Sliding Wardrobe",
         price: 9500,
         image: "/images/table2.jpg",
         categories: ["wardrobes"],
@@ -165,14 +160,12 @@ const products = [
             width: 180,
         },
         availability: [
-            { storeId: "center", storeName: "Центральный магазин", city: "Chisinau", quantity: 0 },
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 0 },
         ],
     },
-
-    // Sofas
     {
         id: 10,
-        name: "Диван угловой",
+        name: "Corner Sofa",
         price: 12500,
         image: "/images/table1.jpg",
         categories: ["sofas"],
@@ -185,12 +178,12 @@ const products = [
             depth: 180,
         },
         availability: [
-            { storeId: "center", storeName: "Центральный магазин", city: "Chisinau", quantity: 1 },
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 1 },
         ],
     },
     {
         id: 11,
-        name: "Диван прямой",
+        name: "Straight Sofa",
         price: 9800,
         image: "/images/table2.jpg",
         categories: ["sofas"],
@@ -202,12 +195,12 @@ const products = [
             width: 200,
         },
         availability: [
-            { storeId: "north", storeName: "Северный склад", city: "Balti", quantity: 2 },
+            { storeId: "north", storeName: "North Warehouse", city: "Balti", quantity: 2 },
         ],
     },
     {
         id: 12,
-        name: "Маленький диван",
+        name: "Small Sofa",
         price: 7200,
         image: "/images/table1.jpg",
         categories: ["sofas"],
@@ -219,14 +212,12 @@ const products = [
             width: 160,
         },
         availability: [
-            { storeId: "south", storeName: "Южный салон", city: "Cahul", quantity: 1 },
+            { storeId: "south", storeName: "South Showroom", city: "Cahul", quantity: 1 },
         ],
     },
-
-    // Armchairs
     {
         id: 13,
-        name: "Кресло мягкое",
+        name: "Soft Armchair",
         price: 3300,
         image: "/images/table2.jpg",
         categories: ["armchairs"],
@@ -238,12 +229,12 @@ const products = [
             weight: 12,
         },
         availability: [
-            { storeId: "center", storeName: "Центральный магазин", city: "Chisinau", quantity: 3 },
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 3 },
         ],
     },
     {
         id: 14,
-        name: "Кресло офисное",
+        name: "Office Chair",
         price: 4200,
         image: "/images/table1.jpg",
         categories: ["armchairs"],
@@ -255,12 +246,12 @@ const products = [
             maxLoad: 120,
         },
         availability: [
-            { storeId: "center", storeName: "Центральный магазин", city: "Chisinau", quantity: 6 },
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 6 },
         ],
     },
     {
         id: 15,
-        name: "Кресло-качалка",
+        name: "Rocking Chair",
         price: 5000,
         image: "/images/table2.jpg",
         categories: ["armchairs"],
@@ -271,14 +262,12 @@ const products = [
             weight: 14,
         },
         availability: [
-            { storeId: "north", storeName: "Северный склад", city: "Balti", quantity: 1 },
+            { storeId: "north", storeName: "North Warehouse", city: "Balti", quantity: 1 },
         ],
     },
-
-    // Beds
     {
         id: 16,
-        name: "Кровать двуспальная",
+        name: "Double Bed",
         price: 10200,
         image: "/images/table1.jpg",
         categories: ["beds"],
@@ -289,12 +278,12 @@ const products = [
             storage: false,
         },
         availability: [
-            { storeId: "center", storeName: "Центральный магазин", city: "Chisinau", quantity: 2 },
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 2 },
         ],
     },
     {
         id: 17,
-        name: "Кровать односпальная",
+        name: "Single Bed",
         price: 7200,
         image: "/images/table2.jpg",
         categories: ["beds"],
@@ -305,12 +294,12 @@ const products = [
             storage: false,
         },
         availability: [
-            { storeId: "south", storeName: "Южный салон", city: "Cahul", quantity: 2 },
+            { storeId: "south", storeName: "South Showroom", city: "Cahul", quantity: 2 },
         ],
     },
     {
         id: 18,
-        name: "Кровать с ящиками",
+        name: "Bed with Storage",
         price: 11500,
         image: "/images/table1.jpg",
         categories: ["beds"],
@@ -321,14 +310,12 @@ const products = [
             storage: true,
         },
         availability: [
-            { storeId: "center", storeName: "Центральный магазин", city: "Chisinau", quantity: 1 },
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 1 },
         ],
     },
-
-    // Cabinets
     {
         id: 19,
-        name: "Тумба прикроватная",
+        name: "Bedside Table",
         price: 2200,
         image: "/images/table2.jpg",
         categories: ["cabinets"],
@@ -339,12 +326,12 @@ const products = [
             width: 45,
         },
         availability: [
-            { storeId: "center", storeName: "Центральный магазин", city: "Chisinau", quantity: 5 },
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 5 },
         ],
     },
     {
         id: 20,
-        name: "Витрина для посуды",
+        name: "Glass Cabinet",
         price: 6700,
         image: "/images/table1.jpg",
         categories: ["cabinets"],
@@ -355,12 +342,12 @@ const products = [
             height: 190,
         },
         availability: [
-            { storeId: "north", storeName: "Северный склад", city: "Balti", quantity: 1 },
+            { storeId: "north", storeName: "North Warehouse", city: "Balti", quantity: 1 },
         ],
     },
     {
         id: 21,
-        name: "Комод высокий",
+        name: "Tall Chest of Drawers",
         price: 5800,
         image: "/images/table2.jpg",
         categories: ["cabinets"],
@@ -371,14 +358,12 @@ const products = [
             height: 130,
         },
         availability: [
-            { storeId: "south", storeName: "Южный салон", city: "Cahul", quantity: 2 },
+            { storeId: "south", storeName: "South Showroom", city: "Cahul", quantity: 2 },
         ],
     },
-
-    // Extras
     {
         id: 22,
-        name: "Стул для офиса",
+        name: "Office Chair",
         price: 2900,
         image: "/images/table1.jpg",
         categories: ["chairs"],
@@ -389,12 +374,12 @@ const products = [
             wheels: true,
         },
         availability: [
-            { storeId: "center", storeName: "Центральный магазин", city: "Chisinau", quantity: 10 },
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 10 },
         ],
     },
     {
         id: 23,
-        name: "Диван раскладной",
+        name: "Foldable Sofa",
         price: 13500,
         image: "/images/table2.jpg",
         categories: ["sofas"],
@@ -406,12 +391,12 @@ const products = [
             sleepingPlace: "140x200",
         },
         availability: [
-            { storeId: "center", storeName: "Центральный магазин", city: "Chisinau", quantity: 1 },
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 1 },
         ],
     },
     {
         id: 24,
-        name: "Кресло кожаное",
+        name: "Leather Armchair",
         price: 4800,
         image: "/images/table1.jpg",
         categories: ["armchairs"],
@@ -422,7 +407,7 @@ const products = [
             weight: 15,
         },
         availability: [
-            { storeId: "north", storeName: "Северный склад", city: "Balti", quantity: 1 },
+            { storeId: "north", storeName: "North Warehouse", city: "Balti", quantity: 1 },
         ],
     },
 ];

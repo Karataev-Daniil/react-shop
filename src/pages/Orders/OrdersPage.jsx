@@ -11,19 +11,19 @@ function OrdersPage() {
         return (
             <>
                 <Helmet>
-                    <title>Ваши заказы | PixelTrade</title>
+                    <title>Your Orders | PixelTrade</title>
                     <meta
                         name="description"
-                        content="У вас пока нет заказов на PixelTrade. Оформите первый заказ и получите качественную мебель для дома и офиса."
+                        content="You have no orders yet on PixelTrade. Place your first order and get quality furniture for home and office."
                     />
-                    <meta property="og:title" content="Ваши заказы | PixelTrade" />
+                    <meta property="og:title" content="Your Orders | PixelTrade" />
                     <meta
                         property="og:description"
-                        content="У вас пока нет заказов на PixelTrade. Оформите первый заказ и получите качественную мебель."
+                        content="You have no orders yet on PixelTrade. Place your first order and get quality furniture."
                     />
                 </Helmet>
 
-                <p className={styles.noOrders}>У вас пока нет заказов.</p>
+                <p className={styles.noOrders}>You have no orders yet.</p>
             </>
         );
     }
@@ -31,20 +31,20 @@ function OrdersPage() {
     return (
         <>
             <Helmet>
-                <title>Ваши заказы | PixelTrade</title>
+                <title>Your Orders | PixelTrade</title>
                 <meta
                     name="description"
-                    content={`Список ваших заказов на PixelTrade. Всего заказов: ${orders.length}.`}
+                    content={`List of your orders on PixelTrade. Total orders: ${orders.length}.`}
                 />
-                <meta property="og:title" content="Ваши заказы | PixelTrade" />
+                <meta property="og:title" content="Your Orders | PixelTrade" />
                 <meta
                     property="og:description"
-                    content={`Список ваших заказов на PixelTrade. Всего заказов: ${orders.length}.`}
+                    content={`List of your orders on PixelTrade. Total orders: ${orders.length}.`}
                 />
             </Helmet>
 
             <main className={styles.page}>
-                <h1 className={styles.title}>Ваши заказы</h1>
+                <h1 className={styles.title}>Your Orders</h1>
 
                 <div className={styles.ordersList}>
                     {orders.map((order) => (
@@ -54,7 +54,7 @@ function OrdersPage() {
                         >
                             <div className={styles.orderHeader}>
                                 <h2 className={styles.orderNumber}>
-                                    Заказ № {order.orderNumber}
+                                    Order № {order.orderNumber}
                                 </h2>
                                 <p className={styles.orderDate}>
                                     {order.date}

@@ -30,7 +30,7 @@ function CartPanel({ cart, removeInCart }) {
                     variant="secondary"
                     className={styles.cartToggle}
                 >
-                    Открыть корзину ({cart.length === 0 ? "пуста" : cart.length})
+                    Open Cart ({cart.length === 0 ? "empty" : cart.length})
                 </Button>
             ) : (
                 <Button
@@ -38,7 +38,7 @@ function CartPanel({ cart, removeInCart }) {
                     variant="secondary"
                     className={styles.cartToggle}
                 >
-                    Корзина ({cart.length === 0 ? "пуста" : cart.length})
+                    Cart ({cart.length === 0 ? "empty" : cart.length})
                 </Button>
             )}
         </div>

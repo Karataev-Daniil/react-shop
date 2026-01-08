@@ -28,7 +28,7 @@ function ProductCard({ id, name, price, image, categories }) {
             <p className={styles.price}>{price} $</p>
 
             <Button onClick={() => addToCart(id)}>
-                Добавить в корзину
+                Add to Cart
             </Button>
         </div>
     );

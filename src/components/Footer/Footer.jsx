@@ -9,44 +9,44 @@ function Footer() {
                 <ul className={styles.navList}>
                     <li className={styles.navItem}>
                         <Button to="/orders" variant="link">
-                            Заказы
+                            Orders
                         </Button>
                     </li>
                     
                     <li className={styles.navItem}>
                         <Button to="/about" variant="link">
-                            О компании
+                            About Us
                         </Button>
                     </li>
 
                     <li className={styles.navItem}>
                         <Button to="/catalog" variant="link">
-                            Каталог
+                            Catalog
                         </Button>
                     </li>
 
                     <li className={styles.navItem}>
                         <Button to="/buyers" variant="link">
-                            Покупателям
+                            For Buyers
                         </Button>
                     </li>
 
                     <li className={styles.navItem}>
                         <Button to="/reviews" variant="link">
-                            Отзывы
+                            Reviews
                         </Button>
                     </li>
 
                     <li className={styles.navItem}>
                         <Button to="/contacts" variant="link">
-                            Контакты
+                            Contacts
                         </Button>
                     </li>
                 </ul>
             </div>
 
             <div className={styles.bottomSection}>
-                <p>© 2025 Furniture Store. Все права защищены.</p>
+                <p>© 2025 Furniture Store. All rights reserved.</p>
             </div>
         </footer>
     );
