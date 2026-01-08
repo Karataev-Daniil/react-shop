@@ -33,6 +33,16 @@ function ProductPage() {
         { label: product.name },
     ];
 
+    const specsElements = [];
+    for (let key in product.specs) {
+        specsElements.push(
+            <div key={key}>
+                <span>{key}</span>
+                <span>{product.specs[key]}</span>
+            </div>
+        )
+    }
+
     return (
         <>
             <Helmet>
@@ -91,6 +101,10 @@ function ProductPage() {
                             {product.tags.map((t) => <span key={t}>{t}</span>)}
                         </div>
                     </div>
+                </div>
+                <div className={styles.specs}>
+                    <h2>Характеристики:</h2>
+                    {specsElements}
                 </div>
             </div>
         </>

@@ -8,6 +8,12 @@ function Footer() {
             <div className={styles.topSection}>
                 <ul className={styles.navList}>
                     <li className={styles.navItem}>
+                        <Button to="/orders" variant="link">
+                            Заказы
+                        </Button>
+                    </li>
+                    
+                    <li className={styles.navItem}>
                         <Button to="/about" variant="link">
                             О компании
                         </Button>
@@ -26,12 +32,6 @@ function Footer() {
                     </li>
 
                     <li className={styles.navItem}>
-                        <Button to="/designers" variant="link">
-                            Дилерам и дизайнерам
-                        </Button>
-                    </li>
-
-                    <li className={styles.navItem}>
                         <Button to="/reviews" variant="link">
                             Отзывы
                         </Button>
@@ -40,12 +40,6 @@ function Footer() {
                     <li className={styles.navItem}>
                         <Button to="/contacts" variant="link">
                             Контакты
-                        </Button>
-                    </li>
-
-                    <li className={styles.navItem}>
-                        <Button to="/portfolio" variant="link">
-                            Портфолио
                         </Button>
                     </li>
                 </ul>
