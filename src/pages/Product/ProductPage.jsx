@@ -24,7 +24,7 @@ function ProductPage() {
     const { product } = useLoaderData();
 
     if (!product) {
-        return <p className={styles.notFound}>Product not found</p>;
+        return <p className={styles.productNotFound}>Product not found</p>;
     }
 
     const breadcrumbs = [
@@ -36,12 +36,19 @@ function ProductPage() {
     const specsElements = [];
     for (let key in product.specs) {
         specsElements.push(
-            <div key={key}>
-                <span>{key}</span>
-                <span>{product.specs[key]}</span>
+            <div key={key} className={styles.productSpecItem}>
+                <span className={styles.productSpecKey}>{key}</span>
+                <span className={styles.productSpecValue}>{product.specs[key]}</span>
             </div>
         );
     }
+    const availabilityList = product.availability.map((store) => (
+        <div key={store.storeId} className={styles.storeItem}>
+            <span className={styles.storeName}>{store.storeName}</span>
+            <span className={styles.storeCity}>{store.city}</span>
+            <span className={styles.storeQuantity}>{store.quantity} pcs</span>
+        </div>
+    ));
 
     return (
         <>
@@ -57,54 +64,67 @@ function ProductPage() {
                 <meta property="og:image" content={product.image} />
             </Helmet>
 
-            <div className={styles.page}>
+            <div className={styles.productPage}>
                 <Button
                     to="/"
                     variant="link"
-                    className={styles.back}
+                    className={styles.backButton}
                 >
                     ← Back
                 </Button>
 
-                <div className={styles.card}>
-                    <div className={styles.cardHeader}>
-                        <h1 className={styles.name}>{product.name}</h1>
+                <div className={styles.productCard}>
+                    <div className={styles.productCardHeader}>
+                        <h1 className={styles.productName}>{product.name}</h1>
                         <Breadcrumbs items={breadcrumbs} />
                     </div>
                     
-                    <div className={styles.cardImage}>
+                    <div className={styles.productCardImage}>
                         <img
                             src={product.image}
                             alt={product.name}
-                            className={styles.image}
+                            className={styles.productImage}
                         />
                     </div>
 
-                    <div className={styles.info}>
-                        <div className={styles.purchase}>
-                            <p className={styles.price}>{product.price} $</p>
+                    <div className={styles.productInfo}>
+                        <div className={styles.productPurchase}>
+                            <p className={styles.productPrice}>{product.price} $</p>
 
                             <Button
                                 variant="secondary"
                                 onClick={() => addToCart(product.id)}
+                                disabled={product.availability.every(s => s.quantity === 0)}
                             >
                                 Add to Cart
                             </Button>
                         </div>
 
-                        <div className={styles.meta}>
+                        <div className={styles.productMeta}>
                             <h2>Category:</h2>
-                            {product.categories.map((c) => <span key={c}>{c}</span>)}
+                            {product.categories.map((c) => (
+                                <span key={c}>{c}</span>
+                            ))}
                         </div>
-                        <div className={styles.meta}>
+                        <div className={styles.productMeta}>
                             <h2>Tags:</h2>
-                            {product.tags.map((t) => <span key={t}>{t}</span>)}
+                            {product.tags.map((t) => (
+                                <span key={t}>{t}</span>
+                            ))}
                         </div>
                     </div>
                 </div>
-                <div className={styles.specs}>
+
+                <div className={styles.productSpecs}>
                     <h2>Specifications:</h2>
                     {specsElements}
+                </div>
+
+                <div className={styles.availability}>
+                    <h2 className={styles.availabilityTitle}>Availability</h2>
+                    <div className={styles.availabilityList}>
+                        {availabilityList}
+                    </div>
                 </div>
             </div>
         </>
