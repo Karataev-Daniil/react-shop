@@ -10,17 +10,19 @@ function Button({
     children,
     variant = "minimal",
     className = "",
+    disabled = false,
     ...props
 }) {
-    const classNames = `${styles.btn} ${styles[variant]} ${className}`.trim();
+    const classNames = `${styles.btn} ${styles[variant]} ${disabled ? styles.disabled : ""} ${className}`.trim();
 
     if (href || external) {
         return (
             <a
-                href={href || to}
+                href={disabled ? undefined : href || to}
                 className={classNames}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={external ? "_blank" : undefined}
+                rel={external ? "noopener noreferrer" : undefined}
+                onClick={disabled ? (e) => e.preventDefault() : onClick}
                 {...props}
             >
                 {children}
@@ -31,8 +33,9 @@ function Button({
     if (to) {
         return (
             <RouterLink
-                to={to}
+                to={disabled ? "#" : to}
                 className={classNames}
+                onClick={disabled ? (e) => e.preventDefault() : onClick}
                 {...props}
             >
                 {children}
@@ -44,6 +47,7 @@ function Button({
         <button
             onClick={onClick}
             className={classNames}
+            disabled={disabled}
             {...props}
         >
             {children}
