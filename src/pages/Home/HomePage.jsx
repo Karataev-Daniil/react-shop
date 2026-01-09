@@ -30,6 +30,7 @@ function HomePage() {
                 {products[0]?.image && (
                     <meta property="og:image" content={products[0].image} />
                 )}
+                <link rel="icon" href="/favicon.ico?v=1" type="image/x-icon" />
                 <meta property="og:title" content="Modern Furniture for Home and Office | Furniture Store" />
                 <meta property="og:description" content="Furniture Store — modern furniture for home and office. High-quality chairs, sofas, tables, and wardrobes." />
             </Helmet>
