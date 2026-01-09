@@ -28,6 +28,8 @@ function ReviewsPage() {
     const [reviews, setReviews] = useLocalForage("reviews", []);
     const [contentReview, setContentReview] = useState("");
     const [gradeReview, setGradeReview] = useState("");
+    const [activeFilter, setActiveFilter] = useState("all");
+    
 
     const createReview = (content, grade) => {
         if (!content || !grade) return;
@@ -35,78 +37,134 @@ function ReviewsPage() {
         const newReview = {
             review: content,
             grade: grade,
-            id: nanoid()
-        }
+            id: nanoid(),
+        };
 
         setReviews([...reviews, newReview]);
         setContentReview("");
         setGradeReview("");
-    }
+    };
+
+    const filteredReviews = reviews.filter((r) => {
+        if (activeFilter === "all") {
+            return true;
+        } else if (activeFilter === 5) {
+            return r.grade === 5;
+        } else if (activeFilter === 4) {
+            return r.grade === 4;
+        } else if (activeFilter === 3) {
+            return r.grade === 3;
+        } else if (activeFilter === "low" && r.grade <= 2) {
+            return true
+        }
+
+        
+        return false;
+    })
 
     return (
         <>
             <Helmet>
-                <title>Отзывы</title>
+                <title>Reviews</title>
             </Helmet>
 
-            <div className={styles.page}>
+            <div className={styles.reviewPage}>
                 <Button to="/" variant="link" className={styles.backButton}>
                     ← Back
                 </Button>
 
-                <section className={styles.reviewFormSection}>
-                    <h2 className={styles.reviewTitle}>Оставьте о нас отзыв!</h2>
+                <section className={styles.reviewForm}>
+                    <h2 className={styles.reviewFormTitle}>Leave us a review!</h2>
+
                     <div className={styles.inputs}>
-                        <input 
-                            type="text" 
-                            placeholder="напишите сюда что думаете о нас" 
+                        <input
+                            type="text"
+                            placeholder="Write what you think about us"
                             value={contentReview}
                             onChange={(e) => setContentReview(e.target.value)}
                             className={styles.textInput}
                         />
-                        <input 
-                            type="number" 
-                            placeholder="выберите оценку от 1 до 5" 
-                            value={gradeReview}
-                            onChange={(e) => {
-                                const value = Number(e.target.value);
-                                if (value > 5) {
-                                    setGradeReview(5);
-                                } else if (value < 1) {
-                                    setGradeReview(1);
-                                } else {
-                                    setGradeReview(value);
-                                }
-                            }}
-                            className={styles.numberInput}
-                            min={1}
-                            max={5}
-                        />
+
+                        <div className={styles.reviewStars}>
+                            {[1, 2, 3, 4, 5].map((star) => (
+                                <button
+                                    key={star}
+                                    onClick={() => setGradeReview(star)}
+                                    className={star <= gradeReview ? styles.starFilled : styles.starEmpty}
+                                >
+                                    ★
+                                </button>
+                            ))}
+                        </div>
                     </div>
+                        
                     <Button
                         onClick={() => createReview(contentReview, gradeReview)}
                         className={styles.submitButton}
                     >
-                        Отправить
+                        Submit
                     </Button>
                 </section>
-
-                <section className={styles.reviewsListSection}>
-                    <h2 className={styles.reviewsListTitle}>Отзывы:</h2>
-                    <div className={styles.reviewsList}>
-                        {reviews.map((r) => (
-                            <div key={r.id} className={styles.reviewItem}>
-                                <span className={styles.reviewText}>{r.review}</span>
-                                <span className={styles.reviewStars}>
-                                    {Array.from({ length: 5 }, (_, i) => (
-                                        <span key={i} className={i < r.grade ? styles.filledStar : styles.emptyStar}>★</span>
-                                    ))}
-                                </span>
-                            </div>
-                        ))}
+                        
+                <section className={styles.reviewListSection}>
+                    <h2 className={styles.reviewListTitle}>Reviews:</h2>
+                        
+                    <div className={styles.reviewFilters}>
+                        <Button
+                            onClick={() => setActiveFilter("all")}
+                            className={activeFilter === "all" ? styles.btnActive : ""}
+                        >
+                            All
+                        </Button>
+                        <Button
+                            onClick={() => setActiveFilter(5)}
+                            className={activeFilter === 5 ? styles.btnActive : ""}
+                        >
+                            5★
+                        </Button>
+                        <Button
+                            onClick={() => setActiveFilter(4)}
+                            className={activeFilter === 4 ? styles.btnActive : ""}
+                        >
+                            4★
+                        </Button>
+                        <Button
+                            onClick={() => setActiveFilter(3)}
+                            className={activeFilter === 3 ? styles.btnActive : ""}
+                        >
+                            3★
+                        </Button>
+                        <Button
+                            onClick={() => setActiveFilter("low")}
+                            className={activeFilter === "low" ? styles.btnActive : ""}
+                        >
+                            Low
+                        </Button>
+                    </div>
+                        
+                    <div className={styles.reviewList}>
+                        {filteredReviews.length === 0
+                            ? "ничего не найдено"
+                            : filteredReviews.map((r) => (
+                                  <div key={r.id} className={styles.reviewItem}>
+                                      <span className={styles.reviewText}>{r.review}</span>
+                            
+                                      <span className={styles.reviewStars}>
+                                          {Array.from({ length: 5 }, (_, i) => (
+                                              <span
+                                                  key={i}
+                                                  className={i < r.grade ? styles.starFilled : styles.starEmpty}
+                                              >
+                                                  ★
+                                              </span>
+                                          ))}
+                                      </span>
+                                  </div>
+                              ))}
                     </div>
                 </section>
             </div>
+
         </>
     );
 }

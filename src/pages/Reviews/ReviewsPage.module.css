@@ -1,4 +1,4 @@
-.page {
+.reviewPage {
     padding: 2rem;
     max-width: 800px;
     margin: 0 auto;
@@ -7,13 +7,13 @@
     margin-bottom: 1rem;
     display: inline-block;
 }
-.reviewFormSection {
+.reviewForm {
     margin-bottom: 2rem;
     padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 8px;
 }
-.reviewTitle {
+.reviewFormTitle {
     margin-bottom: 1rem;
 }
 .inputs {
@@ -21,7 +21,8 @@
     gap: 1rem;
     margin-bottom: 1rem;
 }
-.textInput, .numberInput {
+.textInput,
+.numberInput {
     flex: 1;
     padding: 0.5rem;
     border: 1px solid #ccc;
@@ -30,15 +31,32 @@
 .submitButton {
     padding: 0.5rem 1rem;
 }
-.reviewsListSection {
-    padding: 1rem;
-    border: 1px solid #ddd;
+.reviewFilters {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+.reviewFilters button {
+    height: 28px;
+    padding: 0 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.reviewFilters button.btnActive {
+    background-color: #111827;
+    color: #fff;
+}
+.reviewListSection {
     border-radius: 8px;
 }
-.reviewsListTitle {
+.reviewListTitle {
     margin-bottom: 1rem;
 }
-.reviewsList {
+.reviewList {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -48,6 +66,7 @@
     border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .reviewText {
     font-weight: 500;
@@ -60,13 +79,11 @@
     display: flex;
     gap: 2px;
 }
-
-.filledStar {
+.starFilled {
     color: gold;
     font-size: 1.2rem;
 }
-
-.emptyStar {
+.starEmpty {
     color: #ccc;
     font-size: 1.2rem;
 }
