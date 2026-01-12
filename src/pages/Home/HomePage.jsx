@@ -68,7 +68,7 @@ function HomePage() {
                 ) : (
                     <ProductGrid 
                         products={filteredProducts} 
-                        mode="loadMore"
+                        mode="pagination"
                     />
                 )}
             </section>

@@ -61,7 +61,7 @@ function MainLayout() {
         const newOrder = {
             orderNumber: nanoid(),
             items: cart,
-            createdAt: new Date(),
+            date: new Date().toISOString(),
             status: "pending",
         };
 
