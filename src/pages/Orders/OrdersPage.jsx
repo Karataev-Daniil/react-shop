@@ -3,6 +3,7 @@ import { useOutletContext } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import CartProduct from "../../features/Cart/CartProduct";
 import styles from "./OrdersPage.module.css";
+import OrderItem from "../../features/order/OrderItem";
 
 function OrdersPage() {
     const { orders } = useOutletContext();
@@ -31,15 +32,15 @@ function OrdersPage() {
     return (
         <>
             <Helmet>
-                <title>Your Orders | PixelTrade</title>
+                <title>Your Orders | Furniture Store</title>
                 <meta
                     name="description"
-                    content={`List of your orders on PixelTrade. Total orders: ${orders.length}.`}
+                    content={`List of your orders on Furniture Store. Total orders: ${orders.length}.`}
                 />
-                <meta property="og:title" content="Your Orders | PixelTrade" />
+                <meta property="og:title" content="Your Orders | Furniture Store" />
                 <meta
                     property="og:description"
-                    content={`List of your orders on PixelTrade. Total orders: ${orders.length}.`}
+                    content={`List of your orders on Furniture Store. Total orders: ${orders.length}.`}
                 />
             </Helmet>
 
@@ -48,28 +49,10 @@ function OrdersPage() {
 
                 <div className={styles.ordersList}>
                     {orders.map((order) => (
-                        <div
+                        <OrderItem
                             key={order.orderNumber}
-                            className={styles.order}
-                        >
-                            <div className={styles.orderHeader}>
-                                <h2 className={styles.orderNumber}>
-                                    Order № {order.orderNumber}
-                                </h2>
-                                <p className={styles.orderDate}>
-                                    {order.date}
-                                </p>
-                            </div>
-
-                            <div className={styles.orderItems}>
-                                {order.items.map((product) => (
-                                    <CartProduct
-                                        key={product.cartItemId}
-                                        product={product}
-                                    />
-                                ))}
-                            </div>
-                        </div>
+                            order={order}
+                        />
                     ))}
                 </div>
             </main>

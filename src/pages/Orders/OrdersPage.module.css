@@ -25,35 +25,3 @@
     flex-direction: column;
     gap: 32px;
 }
-
-.order {
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 20px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.orderHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-.orderNumber {
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-.orderDate {
-    font-size: 1rem;
-    color: #777;
-}
-
-.orderItems {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
