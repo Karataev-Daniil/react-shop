@@ -410,6 +410,571 @@ const products = [
             { storeId: "north", storeName: "North Warehouse", city: "Balti", quantity: 1 },
         ],
     },
+        {
+        id: 25,
+        name: "Kids Bed",
+        price: 6400,
+        image: "/images/table2.jpg",
+        categories: ["beds"],
+        tags: ["kids", "compact"],
+        specs: {
+            material: "wood",
+            size: "80x160",
+            storage: false,
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 2 },
+        ],
+    },
+    {
+        id: 26,
+        name: "Bunk Bed",
+        price: 13400,
+        image: "/images/table1.jpg",
+        categories: ["beds"],
+        tags: ["kids", "bunk"],
+        specs: {
+            material: "wood",
+            size: "90x200",
+            levels: 2,
+        },
+        availability: [
+            { storeId: "north", storeName: "North Warehouse", city: "Balti", quantity: 1 },
+        ],
+    },
+    {
+        id: 27,
+        name: "TV Stand",
+        price: 4100,
+        image: "/images/table2.jpg",
+        categories: ["cabinets"],
+        tags: ["tv", "living-room"],
+        specs: {
+            material: "wood",
+            width: 140,
+            shelves: 2,
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 3 },
+        ],
+    },
+    {
+        id: 28,
+        name: "Wall Shelf",
+        price: 1600,
+        image: "/images/table1.jpg",
+        categories: ["shelves"],
+        tags: ["wall", "minimal"],
+        specs: {
+            material: "wood",
+            width: 90,
+        },
+        availability: [
+            { storeId: "south", storeName: "South Showroom", city: "Cahul", quantity: 6 },
+        ],
+    },
+    {
+        id: 29,
+        name: "Bookshelf",
+        price: 5200,
+        image: "/images/table2.jpg",
+        categories: ["shelves"],
+        tags: ["books", "storage"],
+        specs: {
+            material: "wood",
+            shelves: 5,
+            height: 180,
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 2 },
+        ],
+    },
+    {
+        id: 30,
+        name: "Nightstand",
+        price: 2100,
+        image: "/images/table1.jpg",
+        categories: ["cabinets"],
+        tags: ["bedroom", "small"],
+        specs: {
+            material: "wood",
+            drawers: 1,
+        },
+        availability: [
+            { storeId: "north", storeName: "North Warehouse", city: "Balti", quantity: 4 },
+        ],
+    },
+    {
+        id: 31,
+        name: "Kitchen Chair",
+        price: 1900,
+        image: "/images/table2.jpg",
+        categories: ["chairs"],
+        tags: ["kitchen", "simple"],
+        specs: {
+            material: "wood",
+            color: "white",
+            weight: 5,
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 12 },
+        ],
+    },
+    {
+        id: 32,
+        name: "High Back Chair",
+        price: 3600,
+        image: "/images/table1.jpg",
+        categories: ["chairs"],
+        tags: ["classic", "comfort"],
+        specs: {
+            material: "fabric",
+            height: 105,
+        },
+        availability: [
+            { storeId: "south", storeName: "South Showroom", city: "Cahul", quantity: 2 },
+        ],
+    },
+    {
+        id: 33,
+        name: "Lounge Armchair",
+        price: 6200,
+        image: "/images/table2.jpg",
+        categories: ["armchairs"],
+        tags: ["lounge", "comfort"],
+        specs: {
+            material: "fabric",
+            reclining: true,
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 1 },
+        ],
+    },
+    {
+        id: 34,
+        name: "Pouf",
+        price: 1700,
+        image: "/images/table1.jpg",
+        categories: ["armchairs"],
+        tags: ["pouf", "small"],
+        specs: {
+            material: "fabric",
+            diameter: 50,
+        },
+        availability: [
+            { storeId: "north", storeName: "North Warehouse", city: "Balti", quantity: 5 },
+        ],
+    },
+    {
+        id: 35,
+        name: "Sectional Sofa",
+        price: 15800,
+        image: "/images/table2.jpg",
+        categories: ["sofas"],
+        tags: ["sectional", "large"],
+        specs: {
+            material: "fabric",
+            seats: 5,
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 1 },
+        ],
+    },
+    {
+        id: 36,
+        name: "Compact Sofa",
+        price: 6900,
+        image: "/images/table1.jpg",
+        categories: ["sofas"],
+        tags: ["compact", "small"],
+        specs: {
+            material: "fabric",
+            seats: 2,
+        },
+        availability: [
+            { storeId: "south", storeName: "South Showroom", city: "Cahul", quantity: 2 },
+        ],
+    },
+    {
+        id: 37,
+        name: "Round Dining Table",
+        price: 4800,
+        image: "/images/table2.jpg",
+        categories: ["tables"],
+        tags: ["round", "dining"],
+        specs: {
+            material: "wood",
+            diameter: 120,
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 1 },
+        ],
+    },
+    {
+        id: 38,
+        name: "Work Desk",
+        price: 5400,
+        image: "/images/table1.jpg",
+        categories: ["tables"],
+        tags: ["office", "work"],
+        specs: {
+            material: "wood",
+            width: 140,
+            drawers: 2,
+        },
+        availability: [
+            { storeId: "north", storeName: "North Warehouse", city: "Balti", quantity: 2 },
+        ],
+    },
+    {
+        id: 39,
+        name: "Computer Desk",
+        price: 4600,
+        image: "/images/table2.jpg",
+        categories: ["tables"],
+        tags: ["computer", "modern"],
+        specs: {
+            material: "metal",
+            width: 130,
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 3 },
+        ],
+    },
+    {
+        id: 40,
+        name: "Minimal Shelf",
+        price: 1300,
+        image: "/images/table1.jpg",
+        categories: ["shelves"],
+        tags: ["minimal", "wall"],
+        specs: {
+            material: "metal",
+            width: 70,
+        },
+        availability: [
+            { storeId: "south", storeName: "South Showroom", city: "Cahul", quantity: 7 },
+        ],
+    },
+    {
+        id: 41,
+        name: "Open Wardrobe",
+        price: 6800,
+        image: "/images/table2.jpg",
+        categories: ["wardrobes"],
+        tags: ["open", "modern"],
+        specs: {
+            material: "metal",
+            height: 200,
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 1 },
+        ],
+    },
+    {
+        id: 42,
+        name: "Compact Wardrobe",
+        price: 5900,
+        image: "/images/table1.jpg",
+        categories: ["wardrobes"],
+        tags: ["compact", "small"],
+        specs: {
+            material: "wood",
+            doors: 2,
+        },
+        availability: [
+            { storeId: "north", storeName: "North Warehouse", city: "Balti", quantity: 2 },
+        ],
+    },
+    {
+        id: 43,
+        name: "Bathroom Cabinet",
+        price: 3100,
+        image: "/images/table2.jpg",
+        categories: ["cabinets"],
+        tags: ["bathroom", "compact"],
+        specs: {
+            material: "wood",
+            moistureResistant: true,
+        },
+        availability: [
+            { storeId: "south", storeName: "South Showroom", city: "Cahul", quantity: 2 },
+        ],
+    },
+    {
+        id: 44,
+        name: "Hallway Cabinet",
+        price: 4400,
+        image: "/images/table1.jpg",
+        categories: ["cabinets"],
+        tags: ["hallway", "storage"],
+        specs: {
+            material: "wood",
+            shelves: 3,
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 2 },
+        ],
+    },
+    {
+        id: 45,
+        name: "Dining Bench",
+        price: 3600,
+        image: "/images/table2.jpg",
+        categories: ["chairs"],
+        tags: ["bench", "dining"],
+        specs: {
+            material: "wood",
+            seats: 2,
+        },
+        availability: [
+            { storeId: "north", storeName: "North Warehouse", city: "Balti", quantity: 1 },
+        ],
+    },
+    {
+        id: 46,
+        name: "Fabric Pouf",
+        price: 1500,
+        image: "/images/table1.jpg",
+        categories: ["armchairs"],
+        tags: ["fabric", "small"],
+        specs: {
+            material: "fabric",
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 8 },
+        ],
+    },
+    {
+        id: 47,
+        name: "Outdoor Chair",
+        price: 2800,
+        image: "/images/table2.jpg",
+        categories: ["chairs"],
+        tags: ["outdoor", "plastic"],
+        specs: {
+            material: "plastic",
+            weatherResistant: true,
+        },
+        availability: [
+            { storeId: "south", storeName: "South Showroom", city: "Cahul", quantity: 6 },
+        ],
+    },
+    {
+        id: 48,
+        name: "Outdoor Table",
+        price: 5200,
+        image: "/images/table1.jpg",
+        categories: ["tables"],
+        tags: ["outdoor", "garden"],
+        specs: {
+            material: "plastic",
+            seats: 6,
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 2 },
+        ],
+    },
+        {
+        id: 49,
+        name: "Kids Chair",
+        price: 1400,
+        image: "/images/table2.jpg",
+        categories: ["chairs"],
+        tags: ["kids", "plastic"],
+        specs: {
+            material: "plastic",
+            weight: 3,
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 9 },
+        ],
+    },
+    {
+        id: 50,
+        name: "Kids Desk",
+        price: 3600,
+        image: "/images/table1.jpg",
+        categories: ["tables"],
+        tags: ["kids", "study"],
+        specs: {
+            material: "wood",
+            width: 100,
+        },
+        availability: [
+            { storeId: "south", storeName: "South Showroom", city: "Cahul", quantity: 2 },
+        ],
+    },
+    {
+        id: 51,
+        name: "Office Desk Large",
+        price: 7200,
+        image: "/images/table2.jpg",
+        categories: ["tables"],
+        tags: ["office", "large"],
+        specs: {
+            material: "wood",
+            width: 180,
+            drawers: 3,
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 1 },
+        ],
+    },
+    {
+        id: 52,
+        name: "Standing Desk",
+        price: 8800,
+        image: "/images/table1.jpg",
+        categories: ["tables"],
+        tags: ["office", "adjustable"],
+        specs: {
+            material: "metal",
+            adjustableHeight: true,
+        },
+        availability: [
+            { storeId: "north", storeName: "North Warehouse", city: "Balti", quantity: 1 },
+        ],
+    },
+    {
+        id: 53,
+        name: "Bed Frame",
+        price: 6400,
+        image: "/images/table2.jpg",
+        categories: ["beds"],
+        tags: ["frame", "minimal"],
+        specs: {
+            material: "metal",
+            size: "160x200",
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 2 },
+        ],
+    },
+    {
+        id: 54,
+        name: "Metal Bed",
+        price: 8200,
+        image: "/images/table1.jpg",
+        categories: ["beds"],
+        tags: ["metal", "modern"],
+        specs: {
+            material: "metal",
+            size: "140x200",
+        },
+        availability: [
+            { storeId: "south", storeName: "South Showroom", city: "Cahul", quantity: 1 },
+        ],
+    },
+    {
+        id: 55,
+        name: "Bookshelf Tall",
+        price: 6100,
+        image: "/images/table2.jpg",
+        categories: ["shelves"],
+        tags: ["books", "tall"],
+        specs: {
+            material: "wood",
+            height: 210,
+        },
+        availability: [
+            { storeId: "north", storeName: "North Warehouse", city: "Balti", quantity: 1 },
+        ],
+    },
+    {
+        id: 56,
+        name: "Corner Shelf",
+        price: 2200,
+        image: "/images/table1.jpg",
+        categories: ["shelves"],
+        tags: ["corner", "compact"],
+        specs: {
+            material: "wood",
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 4 },
+        ],
+    },
+    {
+        id: 57,
+        name: "Shoe Cabinet",
+        price: 3900,
+        image: "/images/table2.jpg",
+        categories: ["cabinets"],
+        tags: ["shoes", "hallway"],
+        specs: {
+            material: "wood",
+            shelves: 4,
+        },
+        availability: [
+            { storeId: "south", storeName: "South Showroom", city: "Cahul", quantity: 3 },
+        ],
+    },
+    {
+        id: 58,
+        name: "Laundry Cabinet",
+        price: 5200,
+        image: "/images/table1.jpg",
+        categories: ["cabinets"],
+        tags: ["laundry", "storage"],
+        specs: {
+            material: "wood",
+            height: 180,
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 2 },
+        ],
+    },
+    {
+        id: 59,
+        name: "Garden Chair",
+        price: 2600,
+        image: "/images/table2.jpg",
+        categories: ["chairs"],
+        tags: ["garden", "outdoor"],
+        specs: {
+            material: "plastic",
+            weatherResistant: true,
+        },
+        availability: [
+            { storeId: "north", storeName: "North Warehouse", city: "Balti", quantity: 6 },
+        ],
+    },
+    {
+        id: 60,
+        name: "Garden Table",
+        price: 6900,
+        image: "/images/table1.jpg",
+        categories: ["tables"],
+        tags: ["garden", "outdoor"],
+        specs: {
+            material: "plastic",
+            seats: 8,
+        },
+        availability: [
+            { storeId: "center", storeName: "Central Store", city: "Chisinau", quantity: 1 },
+        ],
+    },
+
+    ...Array.from({ length: 40 }).map((_, i) => ({
+        id: 61 + i,
+        name: `Furniture Item ${61 + i}`,
+        price: 2000 + i * 150,
+        image: i % 2 ? "/images/table1.jpg" : "/images/table2.jpg",
+        categories: ["chairs", "tables", "beds", "sofas", "cabinets"][i % 5],
+        tags: ["modern", "classic", "compact", "office", "storage"].slice(0, 2),
+        specs: {
+            material: ["wood", "metal", "fabric"][i % 3],
+        },
+        availability: [
+            {
+                storeId: ["center", "north", "south"][i % 3],
+                storeName: ["Central Store", "North Warehouse", "South Showroom"][i % 3],
+                city: ["Chisinau", "Balti", "Cahul"][i % 3],
+                quantity: (i % 5) + 1,
+            },
+        ],
+    })),
 ];
 
 export default products;
