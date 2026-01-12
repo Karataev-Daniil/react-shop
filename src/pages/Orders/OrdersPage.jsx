@@ -1,7 +1,6 @@
 import React from "react";
 import { useOutletContext } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import CartProduct from "../../features/Cart/CartProduct";
 import styles from "./OrdersPage.module.css";
 import OrderItem from "../../features/order/OrderItem";
 
