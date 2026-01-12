@@ -103,7 +103,12 @@ function ProductPage() {
                         <div className={styles.productMeta}>
                             <h2>Category:</h2>
                             {product.categories.map((c) => (
-                                <span key={c}>{c}</span>
+                                <Button
+                                    key={c}
+                                    to={'/catalog/' + c}
+                                >
+                                    {c}
+                                </Button>
                             ))}
                         </div>
                         <div className={styles.productMeta}>

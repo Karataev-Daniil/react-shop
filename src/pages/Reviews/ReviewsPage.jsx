@@ -144,23 +144,23 @@ function ReviewsPage() {
                         
                     <div className={styles.reviewList}>
                         {filteredReviews.length === 0
-                            ? "ничего не найдено"
+                            ? "nothing found"
                             : filteredReviews.map((r) => (
-                                  <div key={r.id} className={styles.reviewItem}>
-                                      <span className={styles.reviewText}>{r.review}</span>
+                                <div key={r.id} className={styles.reviewItem}>
+                                    <span className={styles.reviewText}>{r.review}</span>
                             
-                                      <span className={styles.reviewStars}>
-                                          {Array.from({ length: 5 }, (_, i) => (
-                                              <span
-                                                  key={i}
-                                                  className={i < r.grade ? styles.starFilled : styles.starEmpty}
-                                              >
-                                                  ★
-                                              </span>
-                                          ))}
-                                      </span>
-                                  </div>
-                              ))}
+                                    <span className={styles.reviewStars}>
+                                        {Array.from({ length: 5 }, (_, i) => (
+                                            <span
+                                                key={i}
+                                                className={i < r.grade ? styles.starFilled : styles.starEmpty}
+                                            >
+                                                ★
+                                            </span>
+                                        ))}
+                                    </span>
+                                </div>
+                            ))}
                     </div>
                 </section>
             </div>

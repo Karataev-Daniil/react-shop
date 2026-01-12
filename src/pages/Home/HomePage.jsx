@@ -1,24 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Helmet } from "react-helmet-async";
 import products from "../../data/products";
 import CategoryButtons from "../../features/catalog/CategoryButtons";
-import ProductFilters from "../../features/catalog/ProductFilters";
+import FilteredProducts from "../../features/catalog/FilteredProducts";
 import ProductGrid from "../../features/catalog/ProductGrid";
 import styles from "./HomePage.module.css";
 
 function HomePage() {
-    const [categoryFilter, setCategoryFilter] = useState("all");
-    const [tagsFilter, setTagsFilter] = useState("all");
-
-    const filteredProducts = products.filter(p => {
-        const categoryMatch = categoryFilter === "all" || p.categories.includes(categoryFilter);
-        const tagMatch = tagsFilter === "all" || p.tags.includes(tagsFilter);
-        return categoryMatch && tagMatch;
-    });
-
-    const categories = [...new Set(products.flatMap(p => p.categories))];
-    const tags = [...new Set(products.flatMap(p => p.tags))];
-
     return (
         <main className={styles.home}>
             <Helmet>
@@ -47,30 +35,12 @@ function HomePage() {
 
             <section className={styles.products}>
                 <h2>Popular Products</h2>
-                <ProductGrid 
-                    products={products} 
-                    itemsPerPage={8}
-                />
+                <ProductGrid products={products} itemsPerPage={8} />
             </section>
 
             <section className={styles.products}>
                 <h2>Browse by Categories</h2>
-                <ProductFilters
-                    categories={categories}
-                    tags={tags}
-                    categoryFilter={categoryFilter}
-                    setCategoryFilter={setCategoryFilter}
-                    tagsFilter={tagsFilter}
-                    setTagsFilter={setTagsFilter}
-                />
-                {filteredProducts.length === 0 ? (
-                    <div>No results found!</div>
-                ) : (
-                    <ProductGrid 
-                        products={filteredProducts} 
-                        mode="pagination"
-                    />
-                )}
+                <FilteredProducts products={products} />
             </section>
 
             <section className={styles.advantages}>

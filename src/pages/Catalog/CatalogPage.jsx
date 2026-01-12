@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import products from "../../data/products";
 
 import ProductGrid from "../../features/catalog/ProductGrid";
-import ProductFilters from "../../features/catalog/ProductFilters";
 import styles from "./CatalogPage.module.css";
+import FilteredProducts from "../../features/catalog/FilteredProducts";
 
 function CatalogPage() {
     const { category } = useParams();
@@ -14,17 +14,21 @@ function CatalogPage() {
         ? products.filter(p => p.categories.includes(category))
         : products;
 
-    const [categoryFilter, setCategoryFilter] = useState("all");
     const [tagsFilter, setTagsFilter] = useState("all");
+    const [priceFilter, setPriceFilter] = useState({ min: 0, max: 10000 });
+    const [shopsFilter, setShopsFilter] = useState("All Shop");
 
-    const filteredProducts = products.filter(p => {
-        const categoryMatch = categoryFilter === "all" || p.categories.includes(categoryFilter);
-        const tagMatch = tagsFilter === "all" || p.tags.includes(tagsFilter);
-        return categoryMatch && tagMatch;
-    });
+    const tags = useMemo(() => [...new Set(products.flatMap(p => p.tags))], [products]);
+    const shops = useMemo(() => [...new Set(products.flatMap(p => p.availability.map(a => a.storeName)))],[products]);
 
-    const categories = [...new Set(products.flatMap(p => p.categories))];
-    const tags = [...new Set(products.flatMap(p => p.tags))];
+    const filteredProducts = useMemo(() => {
+        return productsByCategory.filter(p => {
+            const shopsMatch = shopsFilter === "All Shop" || p.availability.some(a => a.storeName === shopsFilter);
+            const priceMatch = p.price >= priceFilter.min && p.price <= priceFilter.max;
+            const tagMatch = tagsFilter === "all" || p.tags.includes(tagsFilter);
+            return priceMatch && tagMatch && shopsMatch;
+        });
+    }, [productsByCategory, priceFilter, tagsFilter, shopsFilter]);
 
     return (
         <main className={styles.catalog}>
@@ -66,8 +70,73 @@ function CatalogPage() {
 
             <section className={styles.productsSection}>
                 <h2 className={styles.sectionTitle}>Products in Category</h2>
-                <ProductGrid 
-                    products={productsByCategory} 
+
+                <div className={styles.filtersContainer}>
+                    <h3 className={styles.filtersTitle}>Filters</h3>
+
+                    <div className={styles.filterGroup}>
+                        <label className={styles.filterLabel} htmlFor="tagsFilter">By Tags</label>
+                        <select
+                            id="tagsFilter"
+                            value={tagsFilter}
+                            onChange={(e) => setTagsFilter(e.target.value)}
+                            className={styles.filterSelect}
+                        >
+                            <option value="all">All Tags</option>
+                            {tags.map((t) => (
+                                <option key={t} value={t}>{t}</option>
+                            ))}
+                        </select>
+                    </div>
+
+                    <div className={styles.filterGroup}>
+                        <label className={styles.filterLabel}>By Price</label>
+                        <div className={styles.priceInputs}>
+                            <input
+                                type="number"
+                                placeholder="Min. price"
+                                value={priceFilter.min}
+                                onChange={(e) =>
+                                    setPriceFilter((prev) => ({
+                                        ...prev,
+                                        min: Math.max(0, Number(e.target.value)),
+                                    }))
+                                }
+                                className={styles.priceInput}
+                            />
+                            <input
+                                type="number"
+                                placeholder="Max. price"
+                                value={priceFilter.max}
+                                onChange={(e) =>
+                                    setPriceFilter((prev) => ({
+                                        ...prev,
+                                        max: Math.min(10000, Number(e.target.value)),
+                                    }))
+                                }
+                                className={styles.priceInput}
+                            />
+                        </div>
+                    </div>
+
+                    <div className={styles.filterGroup}>
+                        <label className={styles.filterLabel} htmlFor="shopsFilter">By Shop</label>
+                        <select
+                            id="shopsFilter"
+                            value={shopsFilter}
+                            onChange={(e) => setShopsFilter(e.target.value)}
+                            className={styles.filterSelect}
+                        >
+                            <option value="All Shop">All Shop</option>
+                            {shops.map((s) => (
+                                <option key={s} value={s}>{s}</option>
+                            ))}
+                        </select>
+                    </div>
+                </div>
+                        
+                <ProductGrid
+                    products={filteredProducts}
                     itemsPerPage={36}
                 />
             </section>
@@ -75,25 +144,7 @@ function CatalogPage() {
             <section className={styles.filtersSection}>
                 <h2 className={styles.sectionTitle}>Browse Other Categories</h2>
 
-                <div className={styles.filtersWrapper}>
-                    <ProductFilters
-                        categories={categories}
-                        tags={tags}
-                        categoryFilter={categoryFilter}
-                        setCategoryFilter={setCategoryFilter}
-                        tagsFilter={tagsFilter}
-                        setTagsFilter={setTagsFilter}
-                    />
-                </div>
-
-                {filteredProducts.length === 0 ? (
-                    <div className={styles.noResults}>No results found!</div>
-                ) : (
-                    <ProductGrid 
-                        products={filteredProducts} 
-                        mode="loadMore"
-                    />
-                )}
+                <FilteredProducts products={products} />
             </section>
         </main>
     );
