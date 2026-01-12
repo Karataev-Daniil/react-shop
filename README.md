@@ -12,26 +12,6 @@ The app is structured as a modern Single-Page Application (SPA) with a component
 ✔️ Reusable and modular components  
 ✔️ Page navigation via routing
 
-## 📁 Project Structure
-
-Typical React project structure:
-
-react-shop/
-├── public/
-│ └── index.html
-├── src/
-│ ├── components/ # UI components
-│ ├── pages/ # Application pages
-│ ├── App.jsx # Root component
-│ ├── index.jsx # Entry point
-│ └── styles/ # Styles
-├── .gitignore
-├── package.json
-└── README.md
-
-markdown
-Copy code
-
 ## 🧠 Technologies Used
 
 ✔️ **React** — for building UI ([React GitHub](https://github.com/facebook/react))  
