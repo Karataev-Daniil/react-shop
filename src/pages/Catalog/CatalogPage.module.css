@@ -1,10 +1,8 @@
 .catalog {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 60px;
+    margin: 36px 0;
 }
 .categoryHeader {
     text-align: center;
