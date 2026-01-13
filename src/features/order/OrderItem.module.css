@@ -1,7 +1,7 @@
 .order {
     border: 1px solid #e5e7eb;
     border-radius: 12px;
-    padding: 20px;
+    padding: 16px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -13,17 +13,21 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
 }
+
 .orderNumber {
-    font-size: 1.5rem;
+    font-size: 20px;
     font-weight: 500;
+    color: #111;
 }
+
 .orderNumber b {
     font-weight: 600;
 }
+
 .orderDate {
-    font-size: 1rem;
+    font-size: 14px;
     color: #777;
 }
 
@@ -45,4 +49,16 @@
     max-height: 500px;
     opacity: 1;
     margin: 0;
+}
+
+@media (max-width: 768px) {
+    .order {
+        padding: 12px;
+    }
+    .orderNumber {
+        font-size: 18px;
+    }
+    .orderDate {
+        font-size: 13px;
+    }
 }

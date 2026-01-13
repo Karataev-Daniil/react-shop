@@ -1,41 +1,56 @@
 .reviewPage {
-    margin: 36px 0;
+    margin: 32px 0;
 }
+
 .backButton {
-    margin-bottom: 1rem;
     display: inline-block;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #111;
 }
+.backButton:hover {
+    text-decoration: underline;
+}
+
 .reviewForm {
-    margin-bottom: 2rem;
-    padding: 1rem;
+    margin-bottom: 32px;
+    padding: 16px;
     border: 1px solid #ddd;
     border-radius: 8px;
 }
+
 .reviewFormTitle {
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
+    font-size: 18px;
+    color: #111;
 }
+
 .inputs {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 12px;
+    margin-bottom: 16px;
 }
+
 .textInput,
 .numberInput {
     flex: 1;
-    padding: 0.5rem;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 6px;
 }
+
 .submitButton {
-    padding: 0.5rem 1rem;
+    padding: 8px 16px;
+    font-size: 14px;
 }
+
 .reviewFilters {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 8px;
     margin-bottom: 24px;
 }
+
 .reviewFilters button {
     height: 28px;
     padding: 0 8px;
@@ -43,45 +58,73 @@
     border-radius: 4px;
     background-color: #fff;
     cursor: pointer;
+    font-size: 14px;
 }
 .reviewFilters button.btnActive {
     background-color: #111827;
     color: #fff;
 }
+
 .reviewListSection {
     border-radius: 8px;
 }
+
 .reviewListTitle {
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
+    font-size: 18px;
+    color: #111;
 }
+
 .reviewList {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 12px;
 }
+
 .reviewItem {
-    padding: 0.5rem;
+    padding: 8px;
     border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .reviewText {
     font-weight: 500;
+    color: #111;
 }
+
 .reviewGrade {
-    font-weight: bold;
+    font-weight: 600;
     color: #007bff;
 }
+
 .reviewStars {
     display: flex;
-    gap: 2px;
+    gap: 4px;
 }
+
 .starFilled {
     color: gold;
-    font-size: 1.2rem;
+    font-size: 18px;
 }
+
 .starEmpty {
     color: #ccc;
-    font-size: 1.2rem;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .reviewPage {
+        margin: 24px 0;
+    }
+
+    .inputs {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .submitButton {
+        width: 100%;
+    }
 }

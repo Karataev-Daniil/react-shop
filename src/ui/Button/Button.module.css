@@ -7,15 +7,15 @@
     cursor: pointer;
     text-decoration: none;
     font-weight: 400;
-    transition: background 0.2s ease, color 0.2s ease;
     font-size: 14px;
     font-family: 'Courier New', Courier, monospace;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .minimal {
     background: #f3f4f6;
-    color: #111827;
-    padding: 6px 12px;
+    color: #111;
+    padding: 8px 16px;
 }
 .minimal:hover {
     background: #e5e7eb;
@@ -23,8 +23,8 @@
 
 .secondary {
     background: #e5e7eb;
-    color: #111827;
-    padding: 8px 14px;
+    color: #111;
+    padding: 8px 16px;
 }
 .secondary:hover {
     background: #d1d5db;
@@ -42,11 +42,11 @@
 .linkGray {
     background: transparent;
     padding: 0;
-    color: #6b7280;
+    color: #777;
 }
 .linkGray:hover {
     text-decoration: underline;
-    color: #4b5563;
+    color: #555;
 }
 
 .unstyled {

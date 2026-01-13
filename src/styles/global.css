@@ -1,12 +1,15 @@
 body {
     font-family: 'Courier New', Courier, monospace;
-}
-.container {
-    max-width: 1145px;
-    margin: 0 auto;
-    padding: 0 32px;
+    color: #111;
+    margin: 0;
+    padding: 0;
 }
 
+.container {
+    max-width: 1144px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
 
 .popup {
     position: fixed;
@@ -22,9 +25,10 @@ body {
     opacity: 0;
     animation: fadeIn 0.3s forwards;
 }
+
 .popupContent {
     background: #fff;
-    padding: 32px 40px;
+    padding: 32px;
     border-radius: 16px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
     max-width: 400px;
@@ -34,17 +38,20 @@ body {
     transform: translateY(-20px);
     animation: slideIn 0.3s forwards;
 }
+
 .popupContent h3 {
     margin-bottom: 16px;
     font-size: 22px;
     font-weight: 600;
-    color: #222;
+    color: #111;
 }
+
 .popupContent p {
     margin-bottom: 24px;
     font-size: 16px;
-    color: #555;
+    color: #777;
 }
+
 .popupContent button {
     padding: 10px 24px;
     background: #4f46e5;
@@ -53,7 +60,7 @@ body {
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-    transition: 0.2s;
+    transition: background 0.2s;
 }
 .popupContent button:hover {
     background: #4338ca;
@@ -72,6 +79,10 @@ body {
 }
 
 @media (max-width: 480px) {
+    .container { 
+        padding: 0 8px;
+    }
+
     .popupContent {
         padding: 24px;
         width: 90%;

@@ -26,20 +26,8 @@ function Footer() {
                     </li>
 
                     <li className={styles.navItem}>
-                        <Button to="/buyers" variant="link">
-                            For Buyers
-                        </Button>
-                    </li>
-
-                    <li className={styles.navItem}>
                         <Button to="/reviews" variant="link">
                             Reviews
-                        </Button>
-                    </li>
-
-                    <li className={styles.navItem}>
-                        <Button to="/contacts" variant="link">
-                            Contacts
                         </Button>
                     </li>
                 </ul>

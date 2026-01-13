@@ -1,12 +1,25 @@
 .productsGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 14px;
+    gap: 16px;
 }
+
 .paginationWrapper {
     grid-column: 1 / -1;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
+    margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+    .productsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .paginationWrapper {
+        gap: 8px;
+    }
 }

@@ -1,15 +1,35 @@
 .categoryGrid {
     display: grid;
-    grid-template-columns: repeat(5, auto);
-    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
 }
+
 .categoryCard {
     display: grid;
-    align-items: center;
-    justify-content: center;
+    place-items: center;
     height: 40px;
     border: 1px solid #e5e7eb;
-    background: #ffffff;
+    background: #fff;
     border-radius: 12px;
-    padding: 12px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #111;
+    cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+.categoryCard:hover {
+    background: #f5f5f5;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 768px) {
+    .categoryGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .categoryCard {
+        height: 36px;
+        font-size: 13px;
+        padding: 6px 10px;
+    }
 }
