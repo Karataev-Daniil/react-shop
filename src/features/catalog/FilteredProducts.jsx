@@ -37,7 +37,11 @@ function FilteredProducts({ products }) {
             {filteredProducts.length === 0 ? (
                 <div>No results found!</div>
             ) : (
-                <ProductGrid products={filteredProducts} mode="pagination" />
+                <ProductGrid 
+                    key={categoryFilter + "-" + tagsFilter}
+                    products={filteredProducts} 
+                    mode="pagination" 
+                />
             )}
         </div>
     );
