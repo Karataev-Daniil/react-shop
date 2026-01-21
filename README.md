@@ -1,27 +1,30 @@
 # React Shop
 
-🛒 **React Shop** is a frontend e-commerce application built with **React**.  
-The app is structured as a modern Single-Page Application (SPA) with a component-based architecture, providing a clean UI, product catalog, cart functionality, and basic e-commerce features.
+🛒 **React Shop** is a frontend e-commerce application built with **React and TypeScript**.  
+The app is structured as a modern Single-Page Application (SPA) with a component-based architecture, focusing on type safety, scalability, and clean UI.
 
 ## 🚀 Features
 
-✔️ Displays a list of products  
-✔️ Product catalog with categories  
+✔️ Product catalog with categories and filters  
 ✔️ Add and remove products from the cart  
-✔️ Interactive cart showing total items and total price  
+✔️ Interactive cart with item count and total price  
+✔️ Product pagination and “load more” modes  
 ✔️ Reusable and modular components  
-✔️ Page navigation via routing
+✔️ Client-side routing with React Router  
+✔️ Strong static typing with TypeScript  
 
 ## 🧠 Technologies Used
 
-✔️ **React** — for building UI ([React GitHub](https://github.com/facebook/react))  
-✔️ **React Router** — for page routing  
-✔️ **CSS / SCSS** — for styling components  
-✔️ Can be extended with **Redux** or **Context API** for state management
+✔️ **React** — UI library ([GitHub](https://github.com/facebook/react))  
+✔️ **TypeScript** — static typing and safer code  
+✔️ **React Router** — client-side routing  
+✔️ **CSS Modules** — component-scoped styling  
+✔️ Modern React hooks (`useState`, `useMemo`, `useOutletContext`)  
+✔️ Project structure inspired by Feature-Sliced Design (FSD)  
 
 ## 📦 Installation
 
-1. Clone the repository:  
+1. Clone the repository:
    ```bash
    git clone https://github.com/Karataev-Daniil/react-shop.git
 Install dependencies:
@@ -36,14 +39,13 @@ Copy code
 npm start
 Open in browser:
 
-arduino
-Copy code
 http://localhost:3000
 🛠 Future Improvements
 🔹 Connect to a backend API
 🔹 User authentication
 🔹 Admin panel for managing products
 🔹 Payment processing integration
+🔹 Global state management (Context API / Redux / Zustand)
 🔹 Unit and integration tests (Jest / React Testing Library)
 
 ❓ Contact
