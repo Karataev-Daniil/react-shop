@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CartProduct from "../Cart/CartProduct";
 import styles from "./OrderItem.module.css";
-import Button from "../../ui/Button/Button";
+import Button from "../../ui/Button";
 
 function OrderItem({ order }) {
     const [isOpen, setIsOpen] = useState(false);

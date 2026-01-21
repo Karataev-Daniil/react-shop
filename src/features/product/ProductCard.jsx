@@ -1,6 +1,6 @@
 import React from "react";
 import { useOutletContext } from "react-router-dom";
-import Button from "../../ui/Button/Button";
+import Button from "../../ui/Button";
 import styles from "./ProductCard.module.css";
 
 function ProductCard({ id, name, price, image, categories }) {

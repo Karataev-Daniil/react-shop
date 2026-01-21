@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Logo.module.css";
-import Button from "../ui/Button/Button";
+import Button from "../ui/Button";
 
 function Logo() {
     return (

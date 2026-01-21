@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.css";
-import Button from "../../ui/Button/Button";
+import Button from "../../ui/Button";
 
 function Footer() {
     return (

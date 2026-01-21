@@ -2,7 +2,7 @@ import React from "react";
 import { useOutletContext } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import CartProduct from "../../features/Cart/CartProduct";
-import Button from "../../ui/Button/Button";
+import Button from "../../ui/Button";
 import styles from "./CartPage.module.css";
 
 function CartPage() {

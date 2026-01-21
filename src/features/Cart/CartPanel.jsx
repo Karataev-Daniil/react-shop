@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Cart from "./Cart";
-import Button from "../../ui/Button/Button";
+import Button from "../../ui/Button";
 import styles from "./Cart.module.css";
 
 function CartPanel({ cart, removeInCart }) {

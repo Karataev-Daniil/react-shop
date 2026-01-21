@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ProductCard from "../product/ProductCard";
-import Button from "../../ui/Button/Button";
+import Button from "../../ui/Button";
 import styles from "./ProductGrid.module.css";
 
 function ProductGrid({ products, mode, itemsPerPage = 8 }) {

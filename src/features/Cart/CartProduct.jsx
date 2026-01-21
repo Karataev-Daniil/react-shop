@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../ui/Button/Button";
+import Button from "../../ui/Button";
 import styles from "./Cart.module.css";
 
 function CartProduct({ product, removeInCart, showRemove = true }) {

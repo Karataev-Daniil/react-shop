@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import localforage from "localforage";
 import { Helmet } from "react-helmet-async";
-import Button from "../../ui/Button/Button";
+import Button from "../../ui/Button";
 import styles from "./ReviewsPage.module.css";
 import { nanoid } from "nanoid";
 

@@ -6,7 +6,7 @@ import products from "../../data/products";
 import localforage from "localforage";
 
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
-import Button from "../../ui/Button/Button";
+import Button from "../../ui/Button";
 import styles from "./ProductPage.module.css";
 
 export async function loader({ params }) {
@@ -99,7 +99,6 @@ function ProductPage() {
                     ← Back
                 </Button>
 
-                {/* CARD */}
                 <div className={styles.product__card}>
                     <div className={styles.product__header}>
                         <h1 className={styles.product__title}>{product.name}</h1>
@@ -155,7 +154,6 @@ function ProductPage() {
                     </div>
                 </div>
 
-                {/* SPECS */}
                 <div className={styles.product__specs}>
                     <h2>Specifications</h2>
 
@@ -167,7 +165,6 @@ function ProductPage() {
                     ))}
                 </div>
 
-                {/* AVAILABILITY */}
                 <div className={styles.product__availability}>
                     <h2 className={styles.product__availabilityTitle}>
                         Availability
@@ -193,7 +190,6 @@ function ProductPage() {
                     </div>
                 </div>
 
-                {/* REVIEWS */}
                 <section className={styles.reviews}>
                     <h2 className={styles.reviews__title}>
                         Leave a review
