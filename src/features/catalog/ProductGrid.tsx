@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ProductCard from "../product/ProductCard";
 import Button from "../../ui/Button";
 import styles from "./ProductGrid.module.css";
+import type { ProductItem } from "../product/model/types";
 
-function ProductGrid({ products, mode, itemsPerPage = 8 }) {
+type GridMode = "pagination" | "loadMore" | undefined;
+
+type ProductGridProps = {
+    products : ProductItem[]
+    mode : GridMode
+    itemsPerPage : number
+}
+
+function ProductGrid({ products, mode, itemsPerPage = 8 }: ProductGridProps) {
     const [currentPage, setCurrentPage] = useState(1);
     const [visibleCount, setVisibleCount] = useState(itemsPerPage);
 
@@ -28,7 +37,7 @@ function ProductGrid({ products, mode, itemsPerPage = 8 }) {
         setVisibleCount(prev => Math.min(prev + itemsPerPage, products.length));
     };
 
-    let displayProduct;
+    let displayProduct: ProductItem[] = [];
     if (!mode) {
         displayProduct = products.slice(0, itemsPerPage);
     } else if (mode === "pagination") {
@@ -47,6 +56,7 @@ function ProductGrid({ products, mode, itemsPerPage = 8 }) {
                     name={product.name}
                     price={product.price}
                     categories={product.categories}
+                    tags={product.tags}
                 />
             ))}
 

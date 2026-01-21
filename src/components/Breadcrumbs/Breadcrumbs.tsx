@@ -1,11 +1,20 @@
 import { Link } from "react-router-dom";
 import styles from "./Breadcrumbs.module.css";
 
-function Breadcrumbs({ items }) {
+type BreadcrumbsItem = {
+    label : string
+    to? : string
+}
+
+type BreadcrumbsProps = {
+    items : BreadcrumbsItem[]
+}
+
+function Breadcrumbs({ items }: BreadcrumbsProps){
     return (
         <nav className={styles.breadcrumbs}>
             {items.map((item, index) => (
-                <span key={index}>
+                <span key={item.label}>
                     {item.to ? (
                         <Link to={item.to}>{item.label}</Link>
                     ) : (

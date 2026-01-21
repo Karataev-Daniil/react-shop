@@ -1,8 +1,13 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import ProductGrid from "./ProductGrid";
 import styles from "./ProductFilters.module.css";
+import type { ProductItem } from "../product/model/types";
 
-function FilteredProducts({ products }) {
+type ProductItemsProps = {
+    products : ProductItem[]
+}
+
+function FilteredProducts({ products }: ProductItemsProps) {
     const [categoryFilter, setCategoryFilter] = useState("all");
     const [tagsFilter, setTagsFilter] = useState("all");
 
@@ -40,6 +45,7 @@ function FilteredProducts({ products }) {
                 <ProductGrid 
                     key={categoryFilter + "-" + tagsFilter}
                     products={filteredProducts} 
+                    itemsPerPage={8}
                     mode="pagination" 
                 />
             )}

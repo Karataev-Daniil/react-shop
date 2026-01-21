@@ -1,8 +1,14 @@
-import React from "react";
 import Button from "../../ui/Button";
 import styles from "./Cart.module.css";
+import type { CartItem } from "./model/types";
 
-function CartProduct({ product, removeInCart, showRemove = true }) {
+type CartProductProps = {
+    product : CartItem
+    removeInCart : (id: string) => void
+    showRemove? : boolean
+}
+
+function CartProduct({ product, removeInCart, showRemove = true } : CartProductProps) {
     return (
         <div className={styles.cartItem}>
             <span className={styles.cartItemName}>{product.name}</span>
@@ -20,6 +26,5 @@ function CartProduct({ product, removeInCart, showRemove = true }) {
         </div>
     );
 }
-
 
 export default CartProduct;

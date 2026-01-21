@@ -1,10 +1,10 @@
-import React from "react";
 import { useOutletContext } from "react-router-dom";
 import Button from "../../ui/Button";
 import styles from "./ProductCard.module.css";
+import type { ProductItem, CartOutletContext } from "./model/types";
 
-function ProductCard({ id, name, price, image, categories }) {
-    const { addToCart } = useOutletContext();
+function ProductCard({ id, name, price, image, categories }: ProductItem) {
+    const { addToCart } = useOutletContext<CartOutletContext>();
 
     const category = categories[0];
 

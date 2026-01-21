@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Cart from "./Cart";
 import Button from "../../ui/Button";
 import styles from "./Cart.module.css";
+import type { CartItem } from "./model/types";
 
-function CartPanel({ cart, removeInCart }) {
-    const [stateCart, setStateCart] = useState("closed");
+type CartState = "open" | "closed";
+
+type CartPanelProps = {
+    cart : CartItem[]
+    removeInCart : (id: string) => void
+}
+
+function CartPanel({ cart, removeInCart } : CartPanelProps) {
+    const [stateCart, setStateCart] = useState<CartState>("closed");
 
     return (
         <div

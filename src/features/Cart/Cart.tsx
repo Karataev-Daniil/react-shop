@@ -1,8 +1,13 @@
-import React from "react";
 import CartProduct from "./CartProduct";
 import styles from "./Cart.module.css";
+import type { CartItem } from "./model/types";
 
-function Cart({ cart, removeInCart }) {
+type CartProps = {
+    cart : CartItem[]
+    removeInCart : (id: string) => void
+}
+
+function Cart({ cart, removeInCart }: CartProps) {
     if (cart.length === 0) {
         return <p className={styles.empty}>Your cart is empty</p>;
     }

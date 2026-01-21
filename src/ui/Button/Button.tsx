@@ -2,7 +2,7 @@ import React from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import styles from './Button.module.css'
 
-type ButtonVariant = 'minimal' | 'primary' | 'secondary'
+type ButtonVariant = 'minimal' | 'primary' | 'secondary' | 'unstyled'
 
 type CommonProps = {
     children: React.ReactNode
